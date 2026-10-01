@@ -25,13 +25,13 @@ class PageSettings(QWidget):
         self.content_layout.setAlignment(Qt.AlignmentFlag.AlignTop)
         self.line_height = 2
         
-        self.display_label = QLabel(self, text="Display")
+        self.display_label = QLabel(self, text="显示")
         self.display_label.setContentsMargins(0, 0, 0, 15)
         self.display_label.setObjectName("PregameHeaderName")
         
-        self.display_mode = SettingsComboBox(self, "Display Mode", "DisplayMode")
+        self.display_mode = SettingsComboBox(self, "显示模式", "DisplayMode")
         self.display_mode.setContentsMargins(10, 0, 0, 15)
-        self.overlay_position = SettingsComboBox(self, "Overlay Position", "OverlayPosition")
+        self.overlay_position = SettingsComboBox(self, "叠加层位置", "OverlayPosition")
         self.overlay_position.setContentsMargins(10, 0, 0, 15)
         
         if self.window().metaObject().className() == "Overlay":
@@ -48,21 +48,21 @@ class PageSettings(QWidget):
         self.display_hline.setObjectName("DivLine")
         self.display_hline.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Preferred)
         
-        self.keybinds_label = QLabel(self, text="Keybinds")
+        self.keybinds_label = QLabel(self, text="按键绑定")
         self.keybinds_label.setContentsMargins(0, 0, 0, 15)
         self.keybinds_label.setObjectName("PregameHeaderName")
         
-        self.stop_commands_label = QLabel("Abort sending commands", self)
+        self.stop_commands_label = QLabel("中止发送指令", self)
         self.stop_commands_label.setContentsMargins(10, 0, 0, 0)
         self.stop_commands_label.setObjectName("HostIDLabel")
-        self.stop_commands = KeybindEdit(self, "Abort", "Alt+Shift+Q", 211)
+        self.stop_commands = KeybindEdit(self, "中止", "Alt+Shift+Q", 211)
         self.stop_commands.setContentsMargins(10, 0, 0, 15)
         
         self.keybinds_hline = HLine(self, h=self.line_height)
         self.keybinds_hline.setObjectName("DivLine")
         self.keybinds_hline.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Preferred)
         
-        self.other_label = QLabel(self, text="Other")
+        self.other_label = QLabel(self, text="其他")
         self.other_label.setContentsMargins(0, 0, 0, 15)
         self.other_label.setObjectName("PregameHeaderName")
         
@@ -72,21 +72,21 @@ class PageSettings(QWidget):
         self.other_layout.setAlignment(Qt.AlignmentFlag.AlignLeft)
         self.other_layout.setSpacing(40)
         
-        self.enable_ocr = LabeledToggle(self, text="Enable OCR checks", default_state=True)
+        self.enable_ocr = LabeledToggle(self, text="启用 OCR 检测", default_state=True)
         self.enable_ocr.setContentsMargins(0, 15, 0, 0)
         self.enable_ocr.stateChanged.connect(self.ocr_enabled)
         self.enable_ocr.setToolTip(
-            "OCR checks if your chatbox or pause menu is open before sending commands.\n"
-            "This helps prevent unwanted inputs, however, it isn't perfect.\n"
-            "If you're experiencing issues running certain commands, consider disabling this setting."
+            "OCR 会在发送指令前检测你的聊天框或暂停菜单是否打开。\n"
+            "它可以防止误触但效果不是很好。\n"
+            "如果你在运行某些指令时遇到问题，可以考虑关闭此设置。"
         )
         
         self.use_clipboard = LabeledToggle(self, text="Use Clipboard", default_state=True)
         self.use_clipboard.setContentsMargins(0, 15, 0, 0)
         self.use_clipboard.stateChanged.connect(self.clipboard_enabled)
         self.use_clipboard.setToolTip(
-            "Use system clipboard to paste commands into SAR chat.\n"
-            "Disabling this setting will significantly slow down the input process."
+            "使用系统剪贴板将指令粘贴到 SAR 聊天框。\n"
+            "关闭此设置会显著降低输入速度。"
         )
         
         self.command_input_speed = LabeledSlider(
@@ -95,7 +95,7 @@ class PageSettings(QWidget):
             max_value=5,
             step=1, 
             default_value=3, 
-            text="Command Input Speed", 
+            text="指令输入速度", 
             text_type="int",
             enum=CommandSpeed,
             width=290,
@@ -111,11 +111,11 @@ class PageSettings(QWidget):
         self.other_hline.setObjectName("DivLine")
         self.other_hline.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Preferred)
         
-        self.themes_label = QLabel(self, text="Themes")
+        self.themes_label = QLabel(self, text="主题")
         self.themes_label.setContentsMargins(0, 0, 0, 15)
         self.themes_label.setObjectName("PregameHeaderName")
         
-        self.app_theme_label = QLabel("App theme", self)
+        self.app_theme_label = QLabel("应用主题", self)
         self.app_theme_label.setContentsMargins(10, 0, 0, 0)
         self.app_theme_label.setObjectName("HostIDLabel")
         
@@ -215,7 +215,7 @@ class PageSettings(QWidget):
         self.app_themes_layout.addWidget(self.vaporwave_theme)
         self.app_themes_layout.addWidget(self.black_and_white_theme)
         
-        self.overlay_theme_label = QLabel("Overlay theme", self)
+        self.overlay_theme_label = QLabel("覆盖层主题", self)
         self.overlay_theme_label.setContentsMargins(10, 15, 0, 0)
         self.overlay_theme_label.setObjectName("HostIDLabel")
         

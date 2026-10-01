@@ -25,7 +25,7 @@ class Vehicles(QWidget):
         self.content_layout.setAlignment(Qt.AlignmentFlag.AlignTop)
         self.line_height = 2
         
-        self.vehicles_label = QLabel(self.content_area, text="Vehicles")
+        self.vehicles_label = QLabel(self.content_area, text="载具")
         self.vehicles_label.setContentsMargins(0, 0, 0, 15)
         self.vehicles_label.setObjectName("ItemsHeaderName")
         

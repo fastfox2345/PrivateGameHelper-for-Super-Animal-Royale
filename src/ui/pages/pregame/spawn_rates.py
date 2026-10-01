@@ -15,13 +15,13 @@ class SpawnRates(QWidget):
         self.header_layout.setContentsMargins(9, 0, 0, 15)
         self.header_layout.setAlignment(Qt.AlignmentFlag.AlignLeft)
         
-        self.spawn_rates_label = QLabel(self, text="Spawn Rates")
+        self.spawn_rates_label = QLabel(self, text="生成权重")
         self.spawn_rates_label.setContentsMargins(0, 0, 0, 0)
         self.spawn_rates_label.setObjectName("PresetsHeaderName")
         
         self.randomize_pixmap = QPixmap(IMAGES["dice"]).scaledToWidth(20, Qt.TransformationMode.SmoothTransformation)
         self.randomize_all = ClickableLabel(self)
-        self.randomize_all.setToolTip("Randomize")
+        self.randomize_all.setToolTip("随机")
         self.randomize_all.setPixmap(self.randomize_pixmap)
         self.randomize_all.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.randomize_all.setContentsMargins(0, 0, 0, 0)
@@ -49,28 +49,28 @@ class SpawnRates(QWidget):
         self.spawn_rates_settings.setObjectName("Content")
         self.scroll_area.setWidget(self.spawn_rates_settings)
         
-        self.pistol_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "Pistol", icon="pistol")
+        self.pistol_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "手枪", icon="pistol")
         self.pistol_slider.valueChanged.connect(lambda: self.set_setting("gunpistol", self.pistol_slider.value()))
         
-        self.magnum_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "Magnum", icon="magnum")
+        self.magnum_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "左轮手枪", icon="magnum")
         self.magnum_slider.valueChanged.connect(lambda: self.set_setting("gunmagnum", self.magnum_slider.value()))
         
-        self.deagle_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "Deagle", icon="deagle")
+        self.deagle_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "沙鹰", icon="deagle")
         self.deagle_slider.valueChanged.connect(lambda: self.set_setting("gundeagle", self.deagle_slider.value()))
         
-        self.silenced_pistol_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "Silenced Pistol", icon="silenced_pistol")
+        self.silenced_pistol_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "消音手枪", icon="silenced_pistol")
         self.silenced_pistol_slider.valueChanged.connect(lambda: self.set_setting("gunsilencedpistol", self.silenced_pistol_slider.value()))
         
-        self.shotgun_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "Shotgun", icon="shotgun")
+        self.shotgun_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "霰弹枪", icon="shotgun")
         self.shotgun_slider.valueChanged.connect(lambda: self.set_setting("gunshotgun", self.shotgun_slider.value()))
         
-        self.jag7_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "JAG-7", icon="jag7")
+        self.jag7_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "豹动式霰弹枪", icon="jag7")
         self.jag7_slider.valueChanged.connect(lambda: self.set_setting("gunjag7", self.jag7_slider.value()))
         
-        self.smg_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "SMG", icon="smg")
+        self.smg_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "冲锋枪", icon="smg")
         self.smg_slider.valueChanged.connect(lambda: self.set_setting("gunsmg", self.smg_slider.value()))
         
-        self.tommy_gun_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "Tommy Gun", icon="tommy_gun")
+        self.tommy_gun_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "Thomas 冲锋枪", icon="tommy_gun")
         self.tommy_gun_slider.valueChanged.connect(lambda: self.set_setting("gunthomas", self.tommy_gun_slider.value()))
         
         self.ak_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "AK", icon="ak")
@@ -79,46 +79,58 @@ class SpawnRates(QWidget):
         self.m16_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "M16", icon="m16")
         self.m16_slider.valueChanged.connect(lambda: self.set_setting("gunm16", self.m16_slider.value()))
         
-        self.dart_gun_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "Dart Gun", icon="dart_gun")
+        self.dart_gun_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "Dogna 的镖枪", icon="dart_gun")
         self.dart_gun_slider.valueChanged.connect(lambda: self.set_setting("gundart", self.dart_gun_slider.value()))
         
-        self.dartfly_gun_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "Dartfly Gun", icon="dartfly_gun")
+        self.dartfly_gun_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "Dogna 的蝇镖枪", icon="dartfly_gun")
         self.dartfly_gun_slider.valueChanged.connect(lambda: self.set_setting("gundartepic", self.dartfly_gun_slider.value()))
         
-        self.hunting_rifle_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "Hunting Rifle", icon="hunting_rifle")
+        self.hunting_rifle_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "猎枪", icon="hunting_rifle")
         self.hunting_rifle_slider.valueChanged.connect(lambda: self.set_setting("gunhuntingrifle", self.hunting_rifle_slider.value()))
         
-        self.sniper_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "Sniper", icon="sniper")
+        self.sniper_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "狙击枪", icon="sniper")
         self.sniper_slider.valueChanged.connect(lambda: self.set_setting("gunsniper", self.sniper_slider.value()))
         
-        self.superite_laser_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "Superite Laser", icon="superite_laser")
+        self.superite_laser_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "紫晶激光枪", icon="superite_laser")
         self.superite_laser_slider.valueChanged.connect(lambda: self.set_setting("gunlaser", self.superite_laser_slider.value()))
         
-        self.minigun_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "Minigun", icon="minigun")
+        self.minigun_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "机枪", icon="minigun")
         self.minigun_slider.valueChanged.connect(lambda: self.set_setting("gunminigun", self.minigun_slider.value()))
         
-        self.bow_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "Bow", icon="bow")
+        self.bow_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "弓与箭鴙", icon="bow")
         self.bow_slider.valueChanged.connect(lambda: self.set_setting("gunbow", self.bow_slider.value()))
         
-        self.sparrow_launcher_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "Sparrow Launcher", icon="sparrow_launcher")
+        self.sparrow_launcher_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "十鴙弩", icon="sparrow_launcher")
         self.sparrow_launcher_slider.valueChanged.connect(lambda: self.set_setting("guncrossbow", self.sparrow_launcher_slider.value()))
         
-        self.bcg_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "BCG", icon="bcg")
+        self.bcg_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "大䲺枪", icon="bcg")
         self.bcg_slider.valueChanged.connect(lambda: self.set_setting("gunegglauncher", self.bcg_slider.value()))
+
+        self.blunderbuss_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "三管雷筒", icon="blunderbuss")
+        self.blunderbuss_slider.valueChanged.connect(lambda: self.set_setting("gunblunderbuss", self.blunderbuss_slider.value()))
+
+        self.crossbow_zombie_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "咯咯尸鴙弩", icon="crossbow_zombie")
+        self.crossbow_zombie_slider.valueChanged.connect(lambda: self.set_setting("guncrossbowzombie", self.crossbow_zombie_slider.value()))
+
+        self.uzi_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "乌兹冲锋枪", icon="uzi")
+        self.uzi_slider.valueChanged.connect(lambda: self.set_setting("gunuzi", self.uzi_slider.value()))
+
+        self.burst_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "小斗牛犬式点射枪", icon="burst")
+        self.burst_slider.valueChanged.connect(lambda: self.set_setting("gunburst", self.burst_slider.value()))
         
-        self.grenade_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "Grenade", icon="grenade")
+        self.grenade_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "手榴弹", icon="grenade")
         self.grenade_slider.valueChanged.connect(lambda: self.set_setting("grenadefrag", self.grenade_slider.value()))
         
-        self.banana_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "Banana", icon="banana")
+        self.banana_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "香蕉", icon="banana")
         self.banana_slider.valueChanged.connect(lambda: self.set_setting("grenadebanana", self.banana_slider.value()))
         
-        self.skunk_bomb_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "Skunk Bomb", icon="skunk_bomb")
+        self.skunk_bomb_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "臭鼬弹", icon="skunk_bomb")
         self.skunk_bomb_slider.valueChanged.connect(lambda: self.set_setting("grenadeskunk", self.skunk_bomb_slider.value()))
         
-        self.cat_mine_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "Cat Mine", icon="cat_mine")
+        self.cat_mine_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "招财猫地雷", icon="cat_mine")
         self.cat_mine_slider.valueChanged.connect(lambda: self.set_setting("grenadecatmine", self.cat_mine_slider.value()))
         
-        self.zipline_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "Zipline", icon="zipline")
+        self.zipline_slider = LabeledSlider(self, Qt.Orientation.Horizontal, 0, 5, 0.1, 1, "滑索", icon="zipline")
         self.zipline_slider.valueChanged.connect(lambda: self.set_setting("grenadezipline", self.zipline_slider.value()))
         
         self.spawn_rates_settings_layout.addWidget(self.pistol_slider, 0, 0)
@@ -140,11 +152,15 @@ class SpawnRates(QWidget):
         self.spawn_rates_settings_layout.addWidget(self.bow_slider, 3, 1)
         self.spawn_rates_settings_layout.addWidget(self.sparrow_launcher_slider, 3, 2)
         self.spawn_rates_settings_layout.addWidget(self.bcg_slider, 3, 3)
-        self.spawn_rates_settings_layout.addWidget(self.grenade_slider, 3, 4)
-        self.spawn_rates_settings_layout.addWidget(self.banana_slider, 4, 0)
-        self.spawn_rates_settings_layout.addWidget(self.skunk_bomb_slider, 4, 1)
-        self.spawn_rates_settings_layout.addWidget(self.cat_mine_slider, 4, 2)
-        self.spawn_rates_settings_layout.addWidget(self.zipline_slider, 4, 3)
+        self.spawn_rates_settings_layout.addWidget(self.blunderbuss_slider, 3, 4)
+        self.spawn_rates_settings_layout.addWidget(self.crossbow_zombie_slider, 4, 0)
+        self.spawn_rates_settings_layout.addWidget(self.uzi_slider, 4, 1)
+        self.spawn_rates_settings_layout.addWidget(self.burst_slider, 4, 2)
+        self.spawn_rates_settings_layout.addWidget(self.grenade_slider, 4, 3)
+        self.spawn_rates_settings_layout.addWidget(self.banana_slider, 4, 4)
+        self.spawn_rates_settings_layout.addWidget(self.skunk_bomb_slider, 5, 0)
+        self.spawn_rates_settings_layout.addWidget(self.cat_mine_slider, 5, 1)
+        self.spawn_rates_settings_layout.addWidget(self.zipline_slider, 5, 2)
         
         self.page_layout.addWidget(self.header_container)
         self.page_layout.addWidget(self.scroll_area)
@@ -171,6 +187,12 @@ class SpawnRates(QWidget):
         self.bow_slider.setValue(settings["gunbow"])
         self.sparrow_launcher_slider.setValue(settings["guncrossbow"])
         self.bcg_slider.setValue(settings["gunegglauncher"])
+        self.blunderbuss_slider.setValue(settings["gunblunderbuss"])
+        self.crossbow_zombie_slider.setValue(settings["guncrossbowzombie"])
+        self.uzi_slider.setValue(settings["gunuzi"])
+        self.burst_slider.setValue(settings["gunburst"])
+
+
         self.grenade_slider.setValue(settings["grenadefrag"])
         self.banana_slider.setValue(settings["grenadebanana"])
         self.skunk_bomb_slider.setValue(settings["grenadeskunk"])
@@ -201,6 +223,10 @@ class SpawnRates(QWidget):
         self.bow_slider.setValue(glb.PREGAME_SETTINGS["settings"]["gun_weights"]["gunbow"])
         self.sparrow_launcher_slider.setValue(glb.PREGAME_SETTINGS["settings"]["gun_weights"]["guncrossbow"])
         self.bcg_slider.setValue(glb.PREGAME_SETTINGS["settings"]["gun_weights"]["gunegglauncher"])
+        self.blunderbuss_slider.setValue(glb.PREGAME_SETTINGS["settings"]["gun_weights"]["gunblunderbuss"])
+        self.crossbow_zombie_slider.setValue(glb.PREGAME_SETTINGS["settings"]["gun_weights"]["guncrossbowzombie"])
+        self.uzi_slider.setValue(glb.PREGAME_SETTINGS["settings"]["gun_weights"]["gunuzi"])
+        self.burst_slider.setValue(glb.PREGAME_SETTINGS["settings"]["gun_weights"]["gunburst"])
         self.grenade_slider.setValue(glb.PREGAME_SETTINGS["settings"]["gun_weights"]["grenadefrag"])
         self.banana_slider.setValue(glb.PREGAME_SETTINGS["settings"]["gun_weights"]["grenadebanana"])
         self.skunk_bomb_slider.setValue(glb.PREGAME_SETTINGS["settings"]["gun_weights"]["grenadeskunk"])

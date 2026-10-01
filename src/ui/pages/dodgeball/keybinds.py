@@ -24,7 +24,7 @@ class Keybinds(QWidget):
         self.content_layout.setContentsMargins(0, 0, 9, 0)
         self.line_height = 2
         
-        self.spawn_nades_label = QLabel("Spawn Nades")
+        self.spawn_nades_label = QLabel("生成投掷物")
         self.spawn_nades_label.setContentsMargins(0, 0, 0, 15)
         self.spawn_nades_label.setObjectName("ItemsHeaderName")
         
@@ -89,25 +89,25 @@ class Keybinds(QWidget):
         self.spawn_nades_hline = HLine(self, h=self.line_height)
         self.spawn_nades_hline.setObjectName("DivLine")
         
-        self.misc_label = QLabel("Miscellaneous")
+        self.misc_label = QLabel("杂项")
         self.misc_label.setContentsMargins(0, 0, 0, 15)
         self.misc_label.setObjectName("ItemsHeaderName")
         
-        self.spawn_single_nade_label = QLabel("Spawn single nade", self)
+        self.spawn_single_nade_label = QLabel("生成单个投掷物", self)
         self.spawn_single_nade_label.setContentsMargins(10, 0, 0, 0)
         self.spawn_single_nade_label.setObjectName("HostIDLabel")
         
         self.spawn_single_nade_edit = KeybindEdit(self, "SpawnSingleNade", "Ctrl+Y", 220)
         self.spawn_single_nade_edit.setContentsMargins(10, 0, 0, 15)
         
-        self.ghost_host_label = QLabel("Ghost host", self)
+        self.ghost_host_label = QLabel("幽灵房主", self)
         self.ghost_host_label.setContentsMargins(10, 0, 0, 0)
         self.ghost_host_label.setObjectName("HostIDLabel")
         
         self.ghost_host_edit = KeybindEdit(self, "GhostHost", "Ctrl+Shift+K", 220)
         self.ghost_host_edit.setContentsMargins(10, 0, 0, 15)
         
-        self.spawn_hr_label = QLabel("Spawn hunting rifle and ziplines", self)
+        self.spawn_hr_label = QLabel("生成猎枪和滑索", self)
         self.spawn_hr_label.setContentsMargins(10, 0, 0, 0)
         self.spawn_hr_label.setObjectName("HostIDLabel")
         

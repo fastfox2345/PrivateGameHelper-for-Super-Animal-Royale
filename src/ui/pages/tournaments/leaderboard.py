@@ -21,39 +21,39 @@ class Leaderboard(QWidget):
         self.table_labels_layout.setContentsMargins(9, 9, 16, 9)
         self.table_labels_layout.setSpacing(0)
         
-        self.ranking_label = QLabel(self, text="RANKING")
+        self.ranking_label = QLabel(self, text="排名")
         self.ranking_label.setObjectName("PresetNameLabel")
         self.ranking_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         
-        self.player_name_label = QLabel(self, text="PLAYER NAME")
+        self.player_name_label = QLabel(self, text="玩家名称")
         self.player_name_label.setObjectName("PresetNameLabel")
         self.player_name_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         
-        self.games_played = QLabel(self, text="GAMES\nPLAYED")
+        self.games_played = QLabel(self, text="对局\n场次")
         self.games_played.setObjectName("PresetNameLabel")
         self.games_played.setAlignment(Qt.AlignmentFlag.AlignCenter)
         
-        self.wins_label = QLabel(self, text="WINS")
+        self.wins_label = QLabel(self, text="胜利")
         self.wins_label.setObjectName("PresetNameLabel")
         self.wins_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         
-        self.kills_label = QLabel(self, text="KILLS")
+        self.kills_label = QLabel(self, text="击杀")
         self.kills_label.setObjectName("PresetNameLabel")
         self.kills_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         
-        self.average_placement_label = QLabel(self, text="AVERAGE\nPLACEMENT")
+        self.average_placement_label = QLabel(self, text="平均排名")
         self.average_placement_label.setObjectName("PresetNameLabel")
         self.average_placement_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         
-        self.average_kills_label = QLabel(self, text="AVERAGE\nKILLS")
+        self.average_kills_label = QLabel(self, text="平均击杀")
         self.average_kills_label.setObjectName("PresetNameLabel")
         self.average_kills_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         
-        self.most_kills_label = QLabel(self, text="MOST KILLS\nIN A MATCH")
+        self.most_kills_label = QLabel(self, text="单局\n最高击杀")
         self.most_kills_label.setObjectName("PresetNameLabel")
         self.most_kills_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         
-        self.score_label = QLabel(self, text="SCORE")
+        self.score_label = QLabel(self, text="得分")
         self.score_label.setObjectName("PresetNameLabel")
         self.score_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         
@@ -390,7 +390,7 @@ class Leaderboard(QWidget):
         self.clear_leaderboard()
         player_data = self.calculate_leaderboard()
         if not player_data:
-            send_notification("Could not load participants", "NotifFail")
+            send_notification("无法加载参赛者", "NotifFail")
         self.display_leaderboard(player_data)
         self.save_leaderboard_file(player_data)
         if self.window().metaObject().className() == "MainWindow":

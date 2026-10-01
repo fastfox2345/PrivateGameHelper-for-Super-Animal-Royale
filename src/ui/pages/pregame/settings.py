@@ -24,7 +24,7 @@ class Settings(QWidget):
         self.content_layout.setAlignment(Qt.AlignmentFlag.AlignTop)
         self.line_height = 2
         
-        self.ground_loot_label = QLabel(self, text="Ground Loot")
+        self.ground_loot_label = QLabel(self, text="地面物资")
         self.ground_loot_label.setContentsMargins(0, 0, 0, 15)
         self.ground_loot_label.setObjectName("PregameHeaderName")
         
@@ -32,19 +32,19 @@ class Settings(QWidget):
         self.ground_loot_layout = QHBoxLayout(self.ground_loot_settings)
         self.ground_loot_layout.setAlignment(Qt.AlignmentFlag.AlignLeft)
         
-        self.all_items_toggle = LabeledToggle(self.ground_loot_settings, text="All Items", default_state=True)
+        self.all_items_toggle = LabeledToggle(self.ground_loot_settings, text="所有物品", default_state=True)
         self.all_items_toggle.stateChanged.connect(lambda: self.set_setting("allitems", self.all_items_toggle.isChecked()))
         
-        self.guns_toggle = LabeledToggle(self.ground_loot_settings, text="Guns", default_state=True)
+        self.guns_toggle = LabeledToggle(self.ground_loot_settings, text="武器", default_state=True)
         self.guns_toggle.stateChanged.connect(lambda: self.set_setting("guns", self.guns_toggle.isChecked()))
         
-        self.armor_toggle = LabeledToggle(self.ground_loot_settings, text="Armor", default_state=True)
+        self.armor_toggle = LabeledToggle(self.ground_loot_settings, text="护甲", default_state=True)
         self.armor_toggle.stateChanged.connect(lambda: self.set_setting("armors", self.armor_toggle.isChecked()))
         
-        self.throwables_toggle = LabeledToggle(self.ground_loot_settings, text="Throwables", default_state=True)
+        self.throwables_toggle = LabeledToggle(self.ground_loot_settings, text="投掷物", default_state=True)
         self.throwables_toggle.stateChanged.connect(lambda: self.set_setting("throwables", self.throwables_toggle.isChecked()))
         
-        self.powerups_toggle = LabeledToggle(self.ground_loot_settings, text="Powerups", default_state=True)
+        self.powerups_toggle = LabeledToggle(self.ground_loot_settings, text="超级神器", default_state=True)
         self.powerups_toggle.stateChanged.connect(lambda: self.set_setting("powerups", self.powerups_toggle.isChecked()))
         
         self.ground_loot_layout.addWidget(self.all_items_toggle)
@@ -56,7 +56,7 @@ class Settings(QWidget):
         self.ground_loot_hline = HLine(self, h=self.line_height)
         self.ground_loot_hline.setObjectName("DivLine")
         
-        self.vehicles_label = QLabel(self, text="Vehicles")
+        self.vehicles_label = QLabel(self, text="载具")
         self.vehicles_label.setContentsMargins(0, 0, 0, 15)
         self.vehicles_label.setObjectName("PregameHeaderName")
         
@@ -64,13 +64,13 @@ class Settings(QWidget):
         self.vehicles_settings_layout = QHBoxLayout(self.vehicles_settings)
         self.vehicles_settings_layout.setAlignment(Qt.AlignmentFlag.AlignLeft)
         
-        self.emus_toggle = LabeledToggle(self.vehicles_settings, text="Emus", default_state=True)
+        self.emus_toggle = LabeledToggle(self.vehicles_settings, text="鸸鹋", default_state=True)
         self.emus_toggle.stateChanged.connect(lambda: self.set_setting("emus", self.emus_toggle.isChecked()))
         
-        self.hamballs_toggle = LabeledToggle(self.vehicles_settings, text="Hamballs", default_state=True)
+        self.hamballs_toggle = LabeledToggle(self.vehicles_settings, text="仓鼠球", default_state=True)
         self.hamballs_toggle.stateChanged.connect(lambda: self.set_setting("hamballs", self.hamballs_toggle.isChecked()))
         
-        self.ziplines_toggle = LabeledToggle(self.vehicles_settings, text="Ziplines", default_state=True)
+        self.ziplines_toggle = LabeledToggle(self.vehicles_settings, text="滑索", default_state=True)
         self.ziplines_toggle.stateChanged.connect(lambda: self.set_setting("ziplines", self.ziplines_toggle.isChecked()))
         
         self.vehicles_settings_layout.addWidget(self.emus_toggle)
@@ -80,21 +80,21 @@ class Settings(QWidget):
         self.vehicles_hline = HLine(self, h=self.line_height)
         self.vehicles_hline.setObjectName("DivLine")
         
-        self.gas_label = QLabel(self, text="Gas")
+        self.gas_label = QLabel(self, text="臭鼬毒气")
         self.gas_label.setObjectName("PregameHeaderName")
         
         self.gas_settings = QWidget(self)
         self.gas_settings_layout = QHBoxLayout(self.gas_settings)
         self.gas_settings_layout.setAlignment(Qt.AlignmentFlag.AlignLeft)
         
-        self.gas_toggle = LabeledToggle(self.gas_settings, text="Gas", default_state=True)
+        self.gas_toggle = LabeledToggle(self.gas_settings, text="臭鼬毒气", default_state=True)
         self.gas_toggle.setContentsMargins(0, 15, 0, 0)
         self.gas_toggle.stateChanged.connect(lambda: self.set_setting("gasoff", self.gas_toggle.isChecked()))
         
-        self.gas_speed_slider = LabeledSlider(self.gas_settings, Qt.Orientation.Horizontal, 0.4, 3.0, 0.1, 1, "Gas Speed")
+        self.gas_speed_slider = LabeledSlider(self.gas_settings, Qt.Orientation.Horizontal, 0.4, 3.0, 0.1, 1, "毒气缩圈速度倍率")
         self.gas_speed_slider.valueChanged.connect(lambda: self.set_setting("gasspeed", self.gas_speed_slider.value()))
         
-        self.gas_damage_slider = LabeledSlider(self.gas_settings, Qt.Orientation.Horizontal, 1.0, 10.0, 0.1, 1, "Gas Damage")
+        self.gas_damage_slider = LabeledSlider(self.gas_settings, Qt.Orientation.Horizontal, 1.0, 10.0, 0.1, 1, "毒气伤害倍率")
         self.gas_damage_slider.valueChanged.connect(lambda: self.set_setting("gasdmg", self.gas_damage_slider.value()))
         
         self.gas_settings_layout.addWidget(self.gas_toggle)
@@ -104,7 +104,7 @@ class Settings(QWidget):
         self.gas_hline = HLine(self, h=self.line_height)
         self.gas_hline.setObjectName("DivLine")
         
-        self.combat_label = QLabel(self, text="Combat")
+        self.combat_label = QLabel(self, text="战斗")
         self.combat_label.setContentsMargins(0, 0, 0, 15)
         self.combat_label.setObjectName("PregameHeaderName")
         
@@ -112,10 +112,10 @@ class Settings(QWidget):
         self.combat_settings_layout = QHBoxLayout(self.combat_settings)
         self.combat_settings_layout.setAlignment(Qt.AlignmentFlag.AlignLeft)
         
-        self.damage_slider = LabeledSlider(self.combat_settings, Qt.Orientation.Horizontal, 0.0, 10.0, 0.1, 1, "Damage")
+        self.damage_slider = LabeledSlider(self.combat_settings, Qt.Orientation.Horizontal, 0.0, 10.0, 0.1, 1, "伤害倍率")
         self.damage_slider.valueChanged.connect(lambda: self.set_setting("dmg", self.damage_slider.value()))
         
-        self.bullet_speed_slider = LabeledSlider(self.combat_settings, Qt.Orientation.Horizontal, 0.5, 2.0, 0.1, 1, "Bullet Speed")
+        self.bullet_speed_slider = LabeledSlider(self.combat_settings, Qt.Orientation.Horizontal, 0.5, 2.0, 0.1, 1, "子弹速度")
         self.bullet_speed_slider.valueChanged.connect(lambda: self.set_setting("bulletspeed", self.bullet_speed_slider.value()))
         
         self.hpm_slider = LabeledSlider(self.combat_settings, Qt.Orientation.Horizontal, 25, 300, 25, 250, "HPM", "int")
@@ -128,7 +128,7 @@ class Settings(QWidget):
         self.combat_hline = HLine(self, h=self.line_height)
         self.combat_hline.setObjectName("DivLine")
         
-        self.misc_label = QLabel(self, text="Miscellaneous")
+        self.misc_label = QLabel(self, text="杂项")
         self.misc_label.setContentsMargins(0, 0, 0, 15)
         self.misc_label.setObjectName("PregameHeaderName")
         
@@ -136,16 +136,16 @@ class Settings(QWidget):
         self.misc_settings_layout = QHBoxLayout(self.misc_settings)
         self.misc_settings_layout.setAlignment(Qt.AlignmentFlag.AlignLeft)
         
-        self.moles_toggle = LabeledToggle(self.misc_settings, text="Moles", default_state=True)
+        self.moles_toggle = LabeledToggle(self.misc_settings, text="鼹鼠宝箱生成", default_state=True)
         self.moles_toggle.stateChanged.connect(lambda: self.set_setting("moles", self.moles_toggle.isChecked()))
         
-        self.pets_toggle = LabeledToggle(self.misc_settings, text="Pets", default_state=True)
+        self.pets_toggle = LabeledToggle(self.misc_settings, text="宠物显示", default_state=True)
         self.pets_toggle.stateChanged.connect(lambda: self.set_setting("pets", self.pets_toggle.isChecked()))
         
-        self.onehits_toggle = LabeledToggle(self.misc_settings, text="Onehits")
+        self.onehits_toggle = LabeledToggle(self.misc_settings, text="一击必杀")
         self.onehits_toggle.stateChanged.connect(lambda: self.set_setting("onehits", self.onehits_toggle.isChecked()))
         
-        self.no_rolls_toggle = LabeledToggle(self.misc_settings, text="No Rolls")
+        self.no_rolls_toggle = LabeledToggle(self.misc_settings, text="禁止翻滚")
         self.no_rolls_toggle.stateChanged.connect(lambda: self.set_setting("noroll", self.no_rolls_toggle.isChecked()))
         
         self.bots_toggle = LabeledToggle(self.misc_settings, text="Bots")

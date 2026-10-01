@@ -24,7 +24,7 @@ class PageCommands(QWidget):
         self.content_layout.setAlignment(Qt.AlignmentFlag.AlignTop)
         self.line_height = 2
         
-        self.info_label = QLabel(self.content_area, text="Information")
+        self.info_label = QLabel(self.content_area, text="信息")
         self.info_label.setContentsMargins(0, 0, 0, 15)
         self.info_label.setObjectName("ItemsHeaderName")
         
@@ -38,18 +38,18 @@ class PageCommands(QWidget):
         self.getpid_button = Button(self.info_container, "/getpid", w=125, command="getpid")
         
         self.getplayers_button.setToolTip(
-            "Copies a list of all players in the match.\n"
-            "After running the command, can be pasted into notepad.\n"
-            "At the end of a match, you can use this command to grab the stats of the players."
+            "将包含所有玩家的列表复制到剪贴板。 \n"
+            "执行该指令后，可粘贴到记事本中查看。\n"
+            "在对局结束时，你可以用这个指令来获取玩家的统计数据。"
         )
         
         self.score_button.setToolTip(
-            "Copies the stats (placement, kills and time survived) of all players in the match.\n"
-            "After running the command, can be pasted into notepad."
+            "将本局游戏的记分板复制到你的剪贴板中\n"
+            "执行该指令后，可粘贴到记事本中查看。"
         )
         
         self.getpid_button.setToolTip(
-            "Shows your in-game player id #."
+            "显示你的玩家编号 #。"
         )
         
         self.info_container_layout.addWidget(self.getplayers_button)
@@ -59,7 +59,7 @@ class PageCommands(QWidget):
         self.info_hline = HLine(self, h=self.line_height)
         self.info_hline.setObjectName("DivLine")
         
-        self.environment_label = QLabel(self.content_area, text="Environment")
+        self.environment_label = QLabel(self.content_area, text="环境")
         self.environment_label.setContentsMargins(0, 0, 0, 15)
         self.environment_label.setObjectName("ItemsHeaderName")
         
@@ -74,21 +74,21 @@ class PageCommands(QWidget):
         self.gas_start_button = Button(self.environment_container, "/gasstart", w=125, command="gasstart")
         
         self.night_button.setToolTip(
-            "Toggles the night mode."
+            "切换成夜间模式。"
         )
         
         self.rain_button.setToolTip(
-            "Forces a rain weather event."
+            "强制触发降雨的天气事件。"
         )
         
         self.rain_off_button.setToolTip(
-            "Disables rain for entirity of a match.\n"
-            "Won't work if it's already raining in-game."
+            "强制结束下雨。\n"
+            "如果已经在下雨则此操作无效。"
         )
         
         self.gas_start_button.setToolTip(
-            "Makes the first skunk gas timer start right away.\n"
-            "(if in lobby, it just means it'll start right when the eagle starts)"
+            "立即开始首个超级臭鼬毒气倒计时。\n"
+            "（如果在大厅中使用，则巨鹰起飞时将立即开始倒计时）"
         )
         
         self.environment_container_layout.addWidget(self.night_button)
@@ -112,11 +112,11 @@ class PageCommands(QWidget):
         self.no_boss_button = Button(self.svr_container, "/noboss", w=125, command="noboss")
         
         self.boss_button.setToolTip(
-            "Spawns a Giant Star-nosed Mole."
+            "生成一个超级星鼻鼹。"
         )
         
         self.no_boss_button.setToolTip(
-            "Toggle to enable or disable Giant Star-nosed Mole from arriving."
+            "启用或禁用生成巨型星鼻鼹。"
         )
         
         self.svr_container_layout.addWidget(self.boss_button)
@@ -125,7 +125,7 @@ class PageCommands(QWidget):
         self.svr_hline = HLine(self, h=self.line_height)
         self.svr_hline.setObjectName("DivLine")
         
-        self.mystery_label = QLabel(self.content_area, text="Mystery Mode")
+        self.mystery_label = QLabel(self.content_area, text="神秘模式")
         self.mystery_label.setContentsMargins(0, 0, 0, 15)
         self.mystery_label.setObjectName("ItemsHeaderName")
         
@@ -134,40 +134,40 @@ class PageCommands(QWidget):
         self.mystery_container_layout.setAlignment(Qt.AlignmentFlag.AlignLeft)
         self.mystery_container_layout.setContentsMargins(10, 0, 0, 0)
         
-        self.shotgun_sniper_button = Button(self.mystery_container, "Shotguns Snipers", w=125, command="mystery 0")
-        self.wild_west_button = Button(self.mystery_container, "Wild West", w=125, command="mystery 1")
-        self.slow_bullets_button = Button(self.mystery_container, "Slow Bullets", w=125, command="mystery 2")
-        self.bananarama_button = Button(self.mystery_container, "Bananarama", w=125, command="mystery 3")
-        self.handguns_only_button = Button(self.mystery_container, "Handguns Only", w=125, command="mystery 4")
-        self.fast_bullets_button = Button(self.mystery_container, "Fast Bullets", w=125, command="mystery 5")
-        self.one_hit_kill_button = Button(self.mystery_container, "One Hit Kill", w=125, command="mystery 6")
+        self.shotgun_sniper_button = Button(self.mystery_container, "霰弹与狙击", w=125, command="mystery 0")
+        self.wild_west_button = Button(self.mystery_container, "日正当中", w=125, command="mystery 1")
+        self.slow_bullets_button = Button(self.mystery_container, "子弹时间", w=125, command="mystery 2")
+        self.bananarama_button = Button(self.mystery_container, "香蕉宴", w=125, command="mystery 3")
+        self.handguns_only_button = Button(self.mystery_container, "手枪独大", w=125, command="mystery 4")
+        self.fast_bullets_button = Button(self.mystery_container, "子弹超速", w=125, command="mystery 5")
+        self.one_hit_kill_button = Button(self.mystery_container, "一击必杀", w=125, command="mystery 6")
         
         self.shotgun_sniper_button.setToolTip(
-            "In Mystery Mode, selects the \"Shotguns & Snipers\" game mode."
+            "在神秘模式里更改为 \"霰弹与狙击\" 游戏模式。"
         )
         
         self.wild_west_button.setToolTip(
-            "In Mystery Mode, selects the \"Wild West\" game mode."
+            "在神秘模式里更改为 \"日正当中\" 游戏模式。"
         )
         
         self.slow_bullets_button.setToolTip(
-            "In Mystery Mode, selects the \"Slow Bullets\" game mode."
+            "在神秘模式里更改为 \"子弹时间\" 游戏模式。."
         )
         
         self.bananarama_button.setToolTip(
-            "In Mystery Mode, selects the \"Bananarama\" game mode."
+            "在神秘模式里更改为 \"香蕉宴\" 游戏模式。"
         )
         
         self.handguns_only_button.setToolTip(
-            "In Mystery Mode, selects the \"Handguns Only\" game mode."
+            "在神秘模式里更改为 \"手枪独大\" 游戏模式。."
         )
         
         self.fast_bullets_button.setToolTip(
-            "In Mystery Mode, selects the \"Fast Bullets\" game mode."
+            "在神秘模式里更改为 \"子弹超速\" 游戏模式。"
         )
         
         self.one_hit_kill_button.setToolTip(
-            "In Mystery Mode, selects the \"One Hit Kill\" game mode."
+            "在神秘模式里更改为 \"一击必杀\" 游戏模式。"
         )
         
         self.mystery_container_layout.addWidget(self.shotgun_sniper_button)
@@ -181,7 +181,7 @@ class PageCommands(QWidget):
         self.mystery_hline = HLine(self, h=self.line_height)
         self.mystery_hline.setObjectName("DivLine")
         
-        self.misc_label = QLabel(self.content_area, text="Miscellaneous")
+        self.misc_label = QLabel(self.content_area, text="杂项")
         self.misc_label.setContentsMargins(0, 0, 0, 15)
         self.misc_label.setObjectName("ItemsHeaderName")
         
@@ -194,12 +194,12 @@ class PageCommands(QWidget):
         self.soccer_button = Button(self.misc_container, "/soccer", w=125, command="soccer")
         
         self.flight_button.setToolTip(
-            "Can be used to regenerate the Eagle flight path.\n"
-            "Must run before the game timer has started."
+            "重新生成巨鹰的飞行路径。 \n"
+            "只能在倒计时开始前使用。"
         )
         
         self.soccer_button.setToolTip(
-            "Spawns a Fox Ball (only 1 at a time)."
+            "生成狐狸沙滩球(单个社交中心只能存在一个狐狸沙滩球)。"
         )
         
         self.misc_container_layout.addWidget(self.flight_button)

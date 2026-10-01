@@ -25,17 +25,17 @@ class PageDodgeball(QWidget):
         
         _btn_list = [
             {
-                "text": "Settings",
+                "text": "设置",
                 "page": self.settings_page,
                 "active": True
             },
             {
-                "text": "Teams",
+                "text": "队伍",
                 "page": self.teams_page,
                 "active": False
             },
             {
-                "text": "Keybinds",
+                "text": "按键绑定",
                 "page": self.keybinds_page,
                 "active": False
             },

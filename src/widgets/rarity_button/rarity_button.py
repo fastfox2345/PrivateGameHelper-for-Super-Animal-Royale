@@ -1,6 +1,14 @@
 from core import *
 from typing import Literal
 
+RARITY_DISPLAY = {
+    "Common": "普通",
+    "Uncommon": "精良",
+    "Rare": "稀有",
+    "Epic": "史诗",
+    "Legendary": "传说"
+}
+
 class RarityButton(QPushButton):
     def __init__(
         self,
@@ -8,7 +16,7 @@ class RarityButton(QPushButton):
         rarity: Literal["Common", "Uncommon", "Rare", "Epic", "Legendary"] = "Common",
         selected: bool = False
     ):
-        super().__init__(parent=parent, text=rarity)
+        super().__init__(parent=parent, text=RARITY_DISPLAY.get(rarity, rarity))
         self.rarity = rarity
         match self.rarity:
             case "Common":

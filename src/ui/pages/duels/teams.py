@@ -22,7 +22,7 @@ class Teams(QWidget):
         self.team_a_label.setObjectName("PlayersHeaderName")
         self.team_a_label.setContentsMargins(9, 0, 0, 0)
         
-        self.spectators_label = QLabel(self.header, text="Spectators")
+        self.spectators_label = QLabel(self.header, text="旁观者")
         self.spectators_label.setObjectName("PlayersHeaderName")
         self.spectators_label.setContentsMargins(9, 0, 0, 0)
         
@@ -34,7 +34,7 @@ class Teams(QWidget):
         self.team_b_label.setObjectName("PlayersHeaderName")
         
         self.refresh_button = ClickableLabel(self)
-        self.refresh_button.setToolTip("Refresh")
+        self.refresh_button.setToolTip("刷新")
         self.refresh_button_icon = QPixmap(IMAGES["refresh"]).scaledToWidth(20, Qt.TransformationMode.SmoothTransformation)
         self.refresh_button.setPixmap(self.refresh_button_icon)
         self.refresh_button.setFixedSize(self.refresh_button_icon.width() + 9, self.refresh_button_icon.height() + 9)

@@ -23,7 +23,7 @@ class Sidebar(QFrame):
         
         self.hide_pixmap = QPixmap(IMAGES["left_arrow"]).scaledToWidth(13, Qt.TransformationMode.SmoothTransformation)
         self.show_pixmap = QPixmap(IMAGES["right_arrow"]).scaledToWidth(13, Qt.TransformationMode.SmoothTransformation)
-        self.expand_button = QPushButton(text="     Hide", parent=self)
+        self.expand_button = QPushButton(text="     隐藏", parent=self)
         self.expand_button.setObjectName("SidebarButton")
         self.expand_button.setFixedHeight(30)
         self.expand_button.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)

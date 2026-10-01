@@ -69,7 +69,7 @@ class Graphs(QWidget):
         self.left_button.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.left_button.clicked.connect(lambda: self.change_chart(-1))
         
-        self.graph_label = QLabel(self, text="SCORE")
+        self.graph_label = QLabel(self, text="得分")
         self.graph_label.setObjectName("LeaderboardLabel")
         self.graph_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.graph_label.setFixedWidth(400)
@@ -86,7 +86,7 @@ class Graphs(QWidget):
         self.controls_layout.addWidget(self.graph_label)
         self.controls_layout.addWidget(self.right_button)
         
-        self.open_folder_button = Button(self, "Open Graphs Folder", w=210)
+        self.open_folder_button = Button(self, "打开图表文件夹", w=210)
         self.open_folder_button.clicked.connect(self.open_folder)
         
         self.page_layout.addStretch()
@@ -137,7 +137,7 @@ class Graphs(QWidget):
             with open(os.path.join(tournament_path, "metadata.json"), "r") as f:
                 return json.load(f)
         except Exception as e:
-            send_notification("Could not load metadata.", "NotifFail")
+            send_notification("无法加载元数据。", "NotifFail")
             print(e)
     
     def plot_charts(self, tournament_id: str) -> None:
@@ -229,7 +229,7 @@ class Graphs(QWidget):
         self.canvas_dict["score"].axes.set_xticks(x, player_names, rotation=45, fontsize=8, ha="right", rotation_mode="anchor")
         self.canvas_dict["score"].axes.set_xmargin(0.01)
         self.canvas_dict["score"].axes.set_title(metadata["name"], font=rubik_font_bold, fontsize=20)
-        self.canvas_dict["score"].axes.set_ylabel("Score", font=rubik_font_bold, fontsize=20)
+        self.canvas_dict["score"].axes.set_ylabel("得分", font=rubik_font_bold, fontsize=20)
         self.canvas_dict["score"].save_chart()
         
         players.sort(key=lambda player: player.kills, reverse=True)
@@ -244,7 +244,7 @@ class Graphs(QWidget):
         self.canvas_dict["kills"].axes.set_xticks(x, player_names, rotation=45, fontsize=8, ha="right", rotation_mode="anchor")
         self.canvas_dict["kills"].axes.set_xmargin(0.01)
         self.canvas_dict["kills"].axes.set_title(metadata["name"], font=rubik_font_bold, fontsize=20)
-        self.canvas_dict["kills"].axes.set_ylabel("Kills", font=rubik_font_bold, fontsize=20)
+        self.canvas_dict["kills"].axes.set_ylabel("击杀", font=rubik_font_bold, fontsize=20)
         self.canvas_dict["kills"].save_chart()
         
         
@@ -267,7 +267,7 @@ class Graphs(QWidget):
         self.canvas_dict["average_placement"].axes.set_xticklabels(player_names, rotation=45, fontsize=8, ha="right", rotation_mode="anchor")
         self.canvas_dict["average_placement"].axes.set_xmargin(0.01)
         self.canvas_dict["average_placement"].axes.set_title(metadata["name"], font=rubik_font_bold, fontsize=20)
-        self.canvas_dict["average_placement"].axes.set_ylabel("Average Placement", font=rubik_font_bold, fontsize=20)
+        self.canvas_dict["average_placement"].axes.set_ylabel("平均击杀", font=rubik_font_bold, fontsize=20)
         self.canvas_dict["average_placement"].axes.invert_yaxis()
         self.canvas_dict["average_placement"].save_chart()
     

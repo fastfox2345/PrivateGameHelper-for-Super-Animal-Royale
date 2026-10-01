@@ -24,7 +24,7 @@ class Settings(QWidget):
         self.content_layout.setAlignment(Qt.AlignmentFlag.AlignTop)
         self.line_height = 2
         
-        self.general_label = QLabel(self.content_area, text="General")
+        self.general_label = QLabel(self.content_area, text="常规")
         self.general_label.setContentsMargins(0, 0, 0, 15)
         self.general_label.setObjectName("ItemsHeaderName")
         
@@ -33,10 +33,10 @@ class Settings(QWidget):
         self.general_container_layout.setAlignment(Qt.AlignmentFlag.AlignLeft)
         self.general_container_layout.setContentsMargins(10, 0, 0, 0)
         
-        self.map_selection = MapComboBox(self.general_container, "Map", "duels")
+        self.map_selection = MapComboBox(self.general_container, "地图", "duels")
         self.map_selection.addItems(["Bamboo Resort", "SAW Security", "SAW Research Labs", "Welcome Center", "Penguin Palace"])
         
-        self.host_id_label = QLabel(self, text="Host ID")
+        self.host_id_label = QLabel(self, text="房主ID")
         self.host_id_label.setObjectName("HostIDLabel")
         self.host_id_label.setContentsMargins(0, 0, 0, 0)
         
@@ -56,7 +56,7 @@ class Settings(QWidget):
         self.general_hline = HLine(self, h=self.line_height)
         self.general_hline.setObjectName("DivLine")
         
-        self.items_label = QLabel(self, text="Items")
+        self.items_label = QLabel(self, text="物资")
         self.items_label.setContentsMargins(0, 0, 0, 15)
         self.items_label.setObjectName("ItemsHeaderName")
         
@@ -65,13 +65,13 @@ class Settings(QWidget):
         self.items_container_layout.setAlignment(Qt.AlignmentFlag.AlignLeft)
         self.items_container_layout.setContentsMargins(10, 0, 0, 0)
         
-        self.weapons_toggle = LabeledToggle(self, text="Weapons", default_state=True)
+        self.weapons_toggle = LabeledToggle(self, text="武器", default_state=True)
         self.weapons_toggle.stateChanged.connect(lambda: glb.SIGNAL_MANAGER.duelsSettingChanged.emit("weapons", self.weapons_toggle.isChecked()))
-        self.armor_toggle = LabeledToggle(self, text="Armor", default_state=True)
+        self.armor_toggle = LabeledToggle(self, text="护甲", default_state=True)
         self.armor_toggle.stateChanged.connect(lambda: glb.SIGNAL_MANAGER.duelsSettingChanged.emit("armor", self.armor_toggle.isChecked()))
-        self.powerups_toggle = LabeledToggle(self, text="Powerups", default_state=True)
+        self.powerups_toggle = LabeledToggle(self, text="超级神器", default_state=True)
         self.powerups_toggle.stateChanged.connect(lambda: glb.SIGNAL_MANAGER.duelsSettingChanged.emit("powerups", self.powerups_toggle.isChecked()))
-        self.throwables_toggle = LabeledToggle(self, text="Throwables", default_state=True)
+        self.throwables_toggle = LabeledToggle(self, text="投掷物", default_state=True)
         self.throwables_toggle.stateChanged.connect(lambda: glb.SIGNAL_MANAGER.duelsSettingChanged.emit("throwables", self.throwables_toggle.isChecked()))
         
         self.items_container_layout.addWidget(self.weapons_toggle)
@@ -82,7 +82,7 @@ class Settings(QWidget):
         self.items_hline = HLine(self, h=self.line_height)
         self.items_hline.setObjectName("DivLine")
         
-        self.misc_label = QLabel(self, text="Miscellaneous")
+        self.misc_label = QLabel(self, text="杂项")
         self.misc_label.setContentsMargins(0, 0, 0, 15)
         self.misc_label.setObjectName("ItemsHeaderName")
         
@@ -91,13 +91,13 @@ class Settings(QWidget):
         self.misc_container_layout.setAlignment(Qt.AlignmentFlag.AlignLeft)
         self.misc_container_layout.setContentsMargins(10, 0, 0, 0)
         
-        self.no_pets_toggle = LabeledToggle(self, text="No pets")
+        self.no_pets_toggle = LabeledToggle(self, text="禁用宠物")
         self.no_pets_toggle.stateChanged.connect(lambda: glb.SIGNAL_MANAGER.duelsSettingChanged.emit("no_pets", self.no_pets_toggle.isChecked()))
-        self.ohk_toggle = LabeledToggle(self, text="One hit kills")
+        self.ohk_toggle = LabeledToggle(self, text="一击必杀")
         self.ohk_toggle.stateChanged.connect(lambda: glb.SIGNAL_MANAGER.duelsSettingChanged.emit("onehits", self.ohk_toggle.isChecked()))
-        self.no_jumprolls_toggle = LabeledToggle(self, text="No jumprolls")
+        self.no_jumprolls_toggle = LabeledToggle(self, text="禁用翻滚")
         self.no_jumprolls_toggle.stateChanged.connect(lambda: glb.SIGNAL_MANAGER.duelsSettingChanged.emit("noroll", self.no_jumprolls_toggle.isChecked()))
-        self.boundaries_toggle = LabeledToggle(self, text="Banan boundaries")
+        self.boundaries_toggle = LabeledToggle(self, text="香蕉边界")
         self.boundaries_toggle.stateChanged.connect(lambda: glb.SIGNAL_MANAGER.duelsSettingChanged.emit("boundaries", self.boundaries_toggle.isChecked()))
         
         self.misc_container_layout.addWidget(self.no_pets_toggle)

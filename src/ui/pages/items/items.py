@@ -28,22 +28,22 @@ class PageItems(QWidget):
         
         _btn_list = [
             {
-                "text": "Weapons",
+                "text": "武器",
                 "page": self.weapons_page,
                 "active": True
             },
             {
-                "text": "Consumables",
+                "text": "消耗品",
                 "page": self.consumables_page,
                 "active": False
             },
             {
-                "text": "Equipables",
+                "text": "装备",
                 "page": self.equipables_page,
                 "active": False
             },
             {
-                "text": "Vehicles",
+                "text": "载具",
                 "page": self.vehicles_page,
                 "active": False
             },

@@ -28,7 +28,7 @@ class PageTeleport(QWidget):
         self.lmb_pixmap = QPixmap(IMAGES["mouse_lmb"]).scaledToWidth(16, Qt.TransformationMode.SmoothTransformation)
         self.lmb_image = QLabel(self.lmb_container)
         self.lmb_image.setPixmap(self.lmb_pixmap)
-        self.lmb_label = QLabel("Teleport selected player", self.lmb_container)
+        self.lmb_label = QLabel("传送到所选的玩家", self.lmb_container)
         self.lmb_label.setObjectName("TeleportMouseTip")
         
         self.lmb_container_layout.addWidget(self.lmb_image)
@@ -40,7 +40,7 @@ class PageTeleport(QWidget):
         self.rmb_pixmap = QPixmap(IMAGES["mouse_rmb"]).scaledToWidth(16, Qt.TransformationMode.SmoothTransformation)
         self.rmb_image = QLabel(self.rmb_container)
         self.rmb_image.setPixmap(self.rmb_pixmap)
-        self.rmb_label = QLabel("Copy coordinates", self.rmb_container)
+        self.rmb_label = QLabel("复制坐标", self.rmb_container)
         self.rmb_label.setObjectName("TeleportMouseTip")
         
         self.rmb_container_layout.addWidget(self.rmb_image)
@@ -61,7 +61,7 @@ class PageTeleport(QWidget):
         self.or_layout.addWidget(self.or_label)
         self.or_layout.addWidget(self.right_hline)
         
-        self.coordinates_label = QLabel(self, text="Coordinates")
+        self.coordinates_label = QLabel(self, text="坐标")
         self.coordinates_label.setObjectName("HostIDLabel")
         self.coordinates_label.setContentsMargins(0, 0, 0, 0)
         
@@ -72,7 +72,7 @@ class PageTeleport(QWidget):
         self.coordinates_edit.setValidator(QRegularExpressionValidator(r"\d{1,4} \d{1,4}", self))
         self.coordinates_edit.textEdited.connect(lambda: glb.SIGNAL_MANAGER.coordinatesChanged.emit(self.coordinates_edit.text()))
         
-        self.teleport_button = Button(self, "Teleport to coordinates", w=190)
+        self.teleport_button = Button(self, "传送到坐标", w=190)
         self.teleport_button.clicked.connect(self.teleport_to_coordinates)
         
         self.map_container_layout.addWidget(self.map_image, 0, 0, 1, 2)
@@ -94,11 +94,11 @@ class PageTeleport(QWidget):
         self.header_layout.setContentsMargins(10, 0, 10, 0)
         self.header_layout.setAlignment(Qt.AlignmentFlag.AlignLeft)
         
-        self.header_name = QLabel(self.header, text="Players")
+        self.header_name = QLabel(self.header, text="玩家")
         self.header_name.setObjectName("PlayersHeaderName")
         
         self.header_all = ClickableLabel(self.header)
-        self.header_all.setToolTip("Select All")
+        self.header_all.setToolTip("全选")
         self.header_all_icon = QPixmap(IMAGES["all"]).scaledToWidth(20, Qt.TransformationMode.SmoothTransformation)
         self.header_all.setPixmap(self.header_all_icon)
         self.header_all.setFixedSize(self.header_all_icon.width() + 9, self.header_all_icon.height() + 9)
@@ -108,7 +108,7 @@ class PageTeleport(QWidget):
         self.header_all.setObjectName("PlayersHeaderRefresh")
         
         self.header_refresh = ClickableLabel(self.header)
-        self.header_refresh.setToolTip("Refresh")
+        self.header_refresh.setToolTip("刷新")
         self.header_refresh_icon = QPixmap(IMAGES["refresh"]).scaledToWidth(20, Qt.TransformationMode.SmoothTransformation)
         self.header_refresh.setPixmap(self.header_refresh_icon)
         self.header_refresh.setFixedSize(self.header_refresh_icon.width() + 9, self.header_refresh_icon.height() + 9)
@@ -155,5 +155,5 @@ class PageTeleport(QWidget):
             x, y = self.coordinates_edit.text().split(" ")
             teleport_player(int(x), int(y))
         except ValueError as e:
-            send_notification("Invalid coordinates", "NotifFail")
+            send_notification("坐标无效", "NotifFail")
             print(e)

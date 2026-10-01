@@ -25,7 +25,7 @@ class Consumables(QWidget):
         self.content_layout.setAlignment(Qt.AlignmentFlag.AlignTop)
         self.line_height = 2
         
-        self.ammo_label = QLabel(self.content_area, text="Ammo")
+        self.ammo_label = QLabel(self.content_area, text="弹药")
         self.ammo_label.setContentsMargins(0, 0, 0, 15)
         self.ammo_label.setObjectName("ItemsHeaderName")
         
@@ -42,7 +42,7 @@ class Consumables(QWidget):
             100,
             5,
             50,
-            "Ammo Amount",
+            "弹药数量",
             "int"
         )
         self.small_bullets_button = AmmoButton(self, QPixmap(IMAGES["ammo_small"]), 55, 0)
@@ -63,7 +63,7 @@ class Consumables(QWidget):
         self.ammo_hline = HLine(self, h=self.line_height)
         self.ammo_hline.setObjectName("DivLine")
         
-        self.healing_label = QLabel(self.content_area, text="Healing Items")
+        self.healing_label = QLabel(self.content_area, text="回复物品")
         self.healing_label.setContentsMargins(0, 0, 0, 15)
         self.healing_label.setObjectName("ItemsHeaderName")
         
@@ -80,7 +80,7 @@ class Consumables(QWidget):
             200,
             5,
             100,
-            "Juice Amount",
+            "生命果汁数量",
             "int"
         )
         self.tape_amount = LabeledSlider(
@@ -90,7 +90,7 @@ class Consumables(QWidget):
             5,
             1,
             5,
-            "Tape Amount",
+            "胶带数量",
             "int"
         )
         self.juice_container = QWidget(self.healing_container)
@@ -115,7 +115,7 @@ class Consumables(QWidget):
         self.healing_hline = HLine(self, h=self.line_height)
         self.healing_hline.setObjectName("DivLine")
         
-        self.throwables_label = QLabel(self.content_area, text="Throwables")
+        self.throwables_label = QLabel(self.content_area, text="投掷物")
         self.throwables_label.setContentsMargins(0, 0, 0, 15)
         self.throwables_label.setObjectName("ItemsHeaderName")
         
@@ -132,17 +132,19 @@ class Consumables(QWidget):
             10,
             1,
             5,
-            "Throwable Amount",
+            "投掷物数量",
             "int"
         )
         self.banana_button = ThrowableButton(self, QPixmap(IMAGES["banana_color"]), 55, "banana")
         self.grenade_button = ThrowableButton(self, QPixmap(IMAGES["grenade_color"]), 55, "nade")
         self.zipline_button = ThrowableButton(self, QPixmap(IMAGES["zipline_color"]), 55, "zip")
+        self.cat_mine_button = ThrowableButton(self, QPixmap(IMAGES["cat_mine_color"]), 55, "mine")
         
         self.throwables_container_layout.addWidget(self.throwables_amount, 0, 0, 1, 3)
         self.throwables_container_layout.addWidget(self.banana_button, 1, 0)
         self.throwables_container_layout.addWidget(self.grenade_button, 1, 1)
         self.throwables_container_layout.addWidget(self.zipline_button, 1, 2)
+        self.throwables_container_layout.addWidget(self.cat_mine_button, 1, 3)
         
         self.content_layout.addWidget(self.ammo_label)
         self.content_layout.addWidget(self.ammo_container)

@@ -10,7 +10,7 @@ class Weapons(QWidget):
         self.page_layout.setContentsMargins(0, 0, 0, 0)
         self.page_layout.setAlignment(Qt.AlignmentFlag.AlignTop)
         
-        self.label = QLabel("Weapon Selection")
+        self.label = QLabel("武器选择")
         self.label.setObjectName("ItemsHeaderName")
         
         self.header = QWidget(self)
@@ -30,7 +30,7 @@ class Weapons(QWidget):
         self.team_a_label.setObjectName("PlayersHeaderName")
         
         self.team_a_deselect_button = ClickableLabel(self)
-        self.team_a_deselect_button.setToolTip("Disable all")
+        self.team_a_deselect_button.setToolTip("全部禁用")
         self.team_a_deselect_button.setPixmap(self.deselect_icon)
         self.team_a_deselect_button.setFixedSize(self.deselect_icon.width() + 9, self.deselect_icon.height() + 9)
         self.team_a_deselect_button.setAlignment(Qt.AlignmentFlag.AlignCenter)
@@ -39,7 +39,7 @@ class Weapons(QWidget):
         self.team_a_deselect_button.clicked.connect(lambda: glb.SIGNAL_MANAGER.weaponSelectedAll.emit("a", False))
         
         self.team_a_select_button = ClickableLabel(self)
-        self.team_a_select_button.setToolTip("Enable all")
+        self.team_a_select_button.setToolTip("全部启用")
         self.team_a_select_button.setPixmap(self.select_icon)
         self.team_a_select_button.setFixedSize(self.select_icon.width() + 9, self.select_icon.height() + 9)
         self.team_a_select_button.setAlignment(Qt.AlignmentFlag.AlignCenter)
@@ -60,7 +60,7 @@ class Weapons(QWidget):
         self.team_b_label.setObjectName("PlayersHeaderName")
         
         self.team_b_deselect_button = ClickableLabel(self)
-        self.team_b_deselect_button.setToolTip("Disable all")
+        self.team_b_deselect_button.setToolTip("全部禁用")
         self.team_b_deselect_button.setPixmap(self.deselect_icon)
         self.team_b_deselect_button.setFixedSize(self.deselect_icon.width() + 9, self.deselect_icon.height() + 9)
         self.team_b_deselect_button.setAlignment(Qt.AlignmentFlag.AlignCenter)
@@ -69,7 +69,7 @@ class Weapons(QWidget):
         self.team_b_deselect_button.clicked.connect(lambda: glb.SIGNAL_MANAGER.weaponSelectedAll.emit("b", False))
         
         self.team_b_select_button = ClickableLabel(self)
-        self.team_b_select_button.setToolTip("Enable all")
+        self.team_b_select_button.setToolTip("全部启用")
         self.team_b_select_button.setPixmap(self.select_icon)
         self.team_b_select_button.setFixedSize(self.select_icon.width() + 9, self.select_icon.height() + 9)
         self.team_b_select_button.setAlignment(Qt.AlignmentFlag.AlignCenter)
@@ -139,10 +139,15 @@ class Weapons(QWidget):
             WeaponSelect(self.content_area, QPixmap(IMAGES["hunting_rifle_color"]), 13, "a"),
             WeaponSelect(self.content_area, QPixmap(IMAGES["sniper_color"]), 14, "a"),
             WeaponSelect(self.content_area, QPixmap(IMAGES["superite_laser_color"]), 15, "a"),
-            WeaponSelect(self.content_area, QPixmap(IMAGES["minigun_color"]), 16, "a"),
-            WeaponSelect(self.content_area, QPixmap(IMAGES["bow_color"]), 17, "a"),
-            WeaponSelect(self.content_area, QPixmap(IMAGES["sparrow_launcher_color"]), 18, "a"),
-            WeaponSelect(self.content_area, QPixmap(IMAGES["bcg_color"]), 19, "a"),
+            WeaponSelect(self.content_area, QPixmap(IMAGES["xray_cannon_color"]), 16, "a"),
+            WeaponSelect(self.content_area, QPixmap(IMAGES["minigun_color"]), 17, "a"),
+            WeaponSelect(self.content_area, QPixmap(IMAGES["bow_color"]), 18, "a"),
+            WeaponSelect(self.content_area, QPixmap(IMAGES["sparrow_launcher_color"]), 19, "a"),
+            WeaponSelect(self.content_area, QPixmap(IMAGES["bcg_color"]), 20, "a"),
+            WeaponSelect(self.content_area, QPixmap(IMAGES["blunderbuss_color"]), 21, "a"),
+            WeaponSelect(self.content_area, QPixmap(IMAGES["crossbow_zombie_color"]), 22, "a"),
+            WeaponSelect(self.content_area, QPixmap(IMAGES["uzi_color"]), 23, "a"),
+            WeaponSelect(self.content_area, QPixmap(IMAGES["dualzi_color"]), 24, "a"),
         ]
         
         _buttons_b = [
@@ -162,10 +167,15 @@ class Weapons(QWidget):
             WeaponSelect(self.content_area, QPixmap(IMAGES["hunting_rifle_color"]), 13, "b"),
             WeaponSelect(self.content_area, QPixmap(IMAGES["sniper_color"]), 14, "b"),
             WeaponSelect(self.content_area, QPixmap(IMAGES["superite_laser_color"]), 15, "b"),
-            WeaponSelect(self.content_area, QPixmap(IMAGES["minigun_color"]), 16, "b"),
-            WeaponSelect(self.content_area, QPixmap(IMAGES["bow_color"]), 17, "b"),
-            WeaponSelect(self.content_area, QPixmap(IMAGES["sparrow_launcher_color"]), 18, "b"),
-            WeaponSelect(self.content_area, QPixmap(IMAGES["bcg_color"]), 19, "b"),
+            WeaponSelect(self.content_area, QPixmap(IMAGES["xray_cannon_color"]), 16, "b"),
+            WeaponSelect(self.content_area, QPixmap(IMAGES["minigun_color"]), 17, "b"),
+            WeaponSelect(self.content_area, QPixmap(IMAGES["bow_color"]), 18, "b"),
+            WeaponSelect(self.content_area, QPixmap(IMAGES["sparrow_launcher_color"]), 19, "b"),
+            WeaponSelect(self.content_area, QPixmap(IMAGES["bcg_color"]), 20, "b"),
+            WeaponSelect(self.content_area, QPixmap(IMAGES["blunderbuss_color"]), 21, "b"),
+            WeaponSelect(self.content_area, QPixmap(IMAGES["crossbow_zombie_color"]), 22, "b"),
+            WeaponSelect(self.content_area, QPixmap(IMAGES["uzi_color"]), 23, "b"),
+            WeaponSelect(self.content_area, QPixmap(IMAGES["dualzi_color"]), 24, "b"),
         ]
         
         self.page_layout.addWidget(self.label)

@@ -42,7 +42,7 @@ class Rounds(QWidget):
         
         new_round_btn = {
             "icon": IMAGES["add"],
-            "text": "New Round",
+            "text": "新对局",
             "page": self.new_round_page,
         }
         
@@ -114,27 +114,27 @@ class NewRound(QWidget):
         self.table_labels_layout.setContentsMargins(9, 9, 16, 9)
         self.table_labels_layout.setSpacing(0)
         
-        self.ranking_label = QLabel(self, text="RANKING")
+        self.ranking_label = QLabel(self, text="排名")
         self.ranking_label.setObjectName("PresetNameLabel")
         self.ranking_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         
-        self.player_name_label = QLabel(self, text="PLAYER NAME")
+        self.player_name_label = QLabel(self, text="玩家名称")
         self.player_name_label.setObjectName("PresetNameLabel")
         self.player_name_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         
-        self.kills_label = QLabel(self, text="KILLS")
+        self.kills_label = QLabel(self, text="击杀")
         self.kills_label.setObjectName("PresetNameLabel")
         self.kills_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         
-        self.kill_points_label = QLabel(self, text="KILL\nPOINTS")
+        self.kill_points_label = QLabel(self, text="击杀得分")
         self.kill_points_label.setObjectName("PresetNameLabel")
         self.kill_points_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         
-        self.placement_points_label = QLabel(self, text="PLACEMENT\nPOINTS")
+        self.placement_points_label = QLabel(self, text="排名得分")
         self.placement_points_label.setObjectName("PresetNameLabel")
         self.placement_points_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         
-        self.total_points_label = QLabel(self, text="TOTAL\nPOINTS")
+        self.total_points_label = QLabel(self, text="总得分")
         self.total_points_label.setObjectName("PresetNameLabel")
         self.total_points_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         
@@ -166,14 +166,14 @@ class NewRound(QWidget):
         self.buttons_layout.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.buttons_layout.setSpacing(20)
         
-        self.paste_button = Button(self, "Paste scores")
-        self.paste_button.setToolTip("Use /getplayers at the end of a game to copy the scores to your clipboard")
+        self.paste_button = Button(self, "粘贴分数")
+        self.paste_button.setToolTip("在对局结束时使用 /getplayers，将分数复制到剪贴板")
         self.paste_button.clicked.connect(self.paste_scores)
         
-        self.confirm_button = Button(self, "Confirm")
+        self.confirm_button = Button(self, "确认")
         self.confirm_button.clicked.connect(self.confirm_round)
         
-        self.clear_button = Button(self, "Clear", btn_style="ButtonDelete")
+        self.clear_button = Button(self, "清空", btn_style="ButtonDelete")
         self.clear_button.clicked.connect(self.clear_round)
         
         self.buttons_layout.addWidget(self.paste_button)
@@ -590,7 +590,7 @@ class SavedRound(QWidget):
         self.stats_layout.setContentsMargins(9, 0, 9, 9)
         self.stats_layout.setSpacing(0)
         
-        self.delete_button = Button(self, "Delete Round", btn_style="ButtonDelete", w=300)
+        self.delete_button = Button(self, "删除对局", btn_style="ButtonDelete", w=300)
         
         self.page_layout.addWidget(self.table_labels, alignment=Qt.AlignmentFlag.AlignTop)
         self.page_layout.addWidget(self.hline, alignment=Qt.AlignmentFlag.AlignTop)
@@ -599,12 +599,12 @@ class SavedRound(QWidget):
         
         self.confirm_popup = Popup(
             self, 
-            "Confirm", 
-            "Are you sure you want to\ndelete this round?",
+            "确认", 
+            "你确定要删除这一局吗？",
             300,
             150,
-            Button(None, "Cancel", btn_style="ButtonDelete"),
-            Button(None, "Delete", btn_style="ButtonDefault")
+            Button(None, "取消", btn_style="ButtonDelete"),
+            Button(None, "删除", btn_style="ButtonDefault")
         )
         
         self.confirm_popup.buttons[0].clicked.connect(self.confirm_popup.hide)

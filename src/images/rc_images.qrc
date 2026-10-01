@@ -20,9 +20,12 @@
 		<file>images/bandolier.png</file>
 		<file>images/bcg.png</file>
 		<file>images/bcg_color.png</file>
+		<file>images/blunderbuss_color.png</file>
 		<file>images/bow.png</file>
 		<file>images/bow_color.png</file>
+		<file>images/crossbow_zombie_color.png</file>
 		<file>images/cat_mine.png</file>
+		<file>images/cat_mine_color.png</file>
 		<file>images/changelog.png</file>
 		<file>images/claw_boots.png</file>
 		<file>images/clipboard.png</file>
@@ -42,6 +45,7 @@
 		<file>images/down_arrow.png</file>
 		<file>images/dualies.png</file>
 		<file>images/dualies_color.png</file>
+		<file>images/dualzi_color.png</file>
 		<file>images/duels.png</file>
 		<file>images/emu.png</file>
 		<file>images/fail.png</file>
@@ -120,11 +124,13 @@
 		<file>images/twitch.png</file>
 		<file>images/twitter.png</file>
 		<file>images/updater.png</file>
+		<file>images/uzi_color.png</file>
 		<file>images/warning.png</file>
 		<file>images/webhook_setup_0.png</file>
 		<file>images/webhook_setup_1.png</file>
 		<file>images/webhook_setup_2.png</file>
 		<file>images/webhook_setup_3.png</file>
+		<file>images/xray_cannon_color.png</file>
 		<file>images/zipline.png</file>
 		<file>images/zipline_color.png</file>
 	</qresource>

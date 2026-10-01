@@ -25,7 +25,7 @@ class Equipables(QWidget):
         self.content_layout.setAlignment(Qt.AlignmentFlag.AlignTop)
         self.line_height = 2
         
-        self.powerups_label = QLabel(self.content_area, text="Powerups")
+        self.powerups_label = QLabel(self.content_area, text="超级神器")
         self.powerups_label.setContentsMargins(0, 0, 0, 15)
         self.powerups_label.setObjectName("ItemsHeaderName")
         
@@ -54,7 +54,7 @@ class Equipables(QWidget):
         self.powerups_hline = HLine(self, h=self.line_height)
         self.powerups_hline.setObjectName("DivLine")
         
-        self.armor_label = QLabel(self.content_area, text="Armor")
+        self.armor_label = QLabel(self.content_area, text="护甲")
         self.armor_label.setContentsMargins(0, 0, 0, 15)
         self.armor_label.setObjectName("ItemsHeaderName")
         

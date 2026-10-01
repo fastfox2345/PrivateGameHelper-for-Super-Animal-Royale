@@ -49,7 +49,7 @@ class MainWindow(QMainWindow):
         _btn_list = [
             {
                 "icon": IMAGES["home"],
-                "text": "Home",
+                "text": "主页",
                 "category": "home",
                 "show_top": True,
                 "page": self.pages.home_page,
@@ -57,7 +57,7 @@ class MainWindow(QMainWindow):
             },
             {
                 "icon": IMAGES["presets"],
-                "text": "Presets",
+                "text": "预设",
                 "category": "pregame_setup",
                 "show_top": True,
                 "page": self.pages.presets_page,
@@ -65,7 +65,7 @@ class MainWindow(QMainWindow):
             },
             {
                 "icon": IMAGES["pregame"],
-                "text": "Pregame",
+                "text": "赛前设置",
                 "category": "pregame_setup",
                 "show_top": True,
                 "page": self.pages.pregame_page,
@@ -73,7 +73,7 @@ class MainWindow(QMainWindow):
             },
             {
                 "icon": IMAGES["players"],
-                "text": "Players",
+                "text": "玩家",
                 "category": "players",
                 "show_top": True,
                 "page": self.pages.players_page,
@@ -81,7 +81,7 @@ class MainWindow(QMainWindow):
             },
             {
                 "icon": IMAGES["teleport"],
-                "text": "Teleport",
+                "text": "传送",
                 "category": "players",
                 "show_top": True,
                 "page": self.pages.teleport_page,
@@ -89,7 +89,7 @@ class MainWindow(QMainWindow):
             },
             {
                 "icon": IMAGES["banana"],
-                "text": "Items",
+                "text": "物资",
                 "category": "commands",
                 "show_top": True,
                 "page": self.pages.items_page,
@@ -97,7 +97,7 @@ class MainWindow(QMainWindow):
             },
             {
                 "icon": IMAGES["commands"],
-                "text": "Commands",
+                "text": "指令",
                 "category": "commands",
                 "show_top": True,
                 "page": self.pages.commands_page,
@@ -105,7 +105,7 @@ class MainWindow(QMainWindow):
             },
             {
                 "icon": IMAGES["duels"],
-                "text": "Duels",
+                "text": "决斗",
                 "category": "gamemodes",
                 "show_top": True,
                 "page": self.pages.duels_page,
@@ -113,7 +113,7 @@ class MainWindow(QMainWindow):
             },
             {
                 "icon": IMAGES["dodgeball"],
-                "text": "Dodgeball",
+                "text": "躲避球",
                 "category": "gamemodes",
                 "show_top": True,
                 "page": self.pages.dodgeball_page,
@@ -137,7 +137,7 @@ class MainWindow(QMainWindow):
             },
             {
                 "icon": IMAGES["changelog"],
-                "text": "Changelog",
+                "text": "更新日志",
                 "category": "info",
                 "show_top": False,
                 "page": self.pages.changelog_page,
@@ -145,7 +145,7 @@ class MainWindow(QMainWindow):
             },
             {
                 "icon": IMAGES["info"],
-                "text": "About",
+                "text": "关于",
                 "category": "info",
                 "show_top": False,
                 "page": self.pages.about_page,
@@ -153,7 +153,7 @@ class MainWindow(QMainWindow):
             },
             {
                 "icon": IMAGES["settings"],
-                "text": "Settings",
+                "text": "设置",
                 "category": "settings",
                 "show_top": False,
                 "page": self.pages.settings_page,

@@ -25,17 +25,17 @@ class PagePregame(QWidget):
         
         _btn_list = [
             {
-                "text": "General",
+                "text": "常规",
                 "page": self.general_page,
                 "active": True
             },
             {
-                "text": "Settings",
+                "text": "设置",
                 "page": self.settings_page,
                 "active": False
             },
             {
-                "text": "Spawn Rates",
+                "text": "生成权重",
                 "page": self.spawn_rates_page,
                 "active": False
             },

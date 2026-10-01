@@ -24,7 +24,7 @@ class Settings(QWidget):
         self.content_layout.setAlignment(Qt.AlignmentFlag.AlignTop)
         self.line_height = 2
         
-        self.general_label = QLabel(self.content_area, text="General")
+        self.general_label = QLabel(self.content_area, text="常规")
         self.general_label.setContentsMargins(0, 0, 0, 15)
         self.general_label.setObjectName("ItemsHeaderName")
         
@@ -33,7 +33,7 @@ class Settings(QWidget):
         self.general_container_layout.setAlignment(Qt.AlignmentFlag.AlignLeft)
         self.general_container_layout.setContentsMargins(10, 0, 0, 0)
         
-        self.map_selection = MapComboBox(self.general_container, "Map", "dodgeball")
+        self.map_selection = MapComboBox(self.general_container, "地图", "dodgeball")
         self.map_selection.addItems([
             "Bamboo Resort",
             "SAW Security",
@@ -47,7 +47,7 @@ class Settings(QWidget):
             "Super Sea Land"
         ])
         
-        self.host_id_label = QLabel(self, text="Host ID")
+        self.host_id_label = QLabel(self, text="房主ID")
         self.host_id_label.setObjectName("HostIDLabel")
         self.host_id_label.setContentsMargins(0, 0, 0, 0)
         
@@ -67,7 +67,7 @@ class Settings(QWidget):
         self.general_hline = HLine(self, h=self.line_height)
         self.general_hline.setObjectName("DivLine")
         
-        self.settings_label = QLabel(self, text="Settings")
+        self.settings_label = QLabel(self, text="设置")
         self.settings_label.setObjectName("ItemsHeaderName")
         
         self.settings_container = QWidget(self.content_area)
@@ -75,13 +75,13 @@ class Settings(QWidget):
         self.settings_container_layout.setAlignment(Qt.AlignmentFlag.AlignLeft)
         self.settings_container_layout.setContentsMargins(10, 0, 0, 0)
         
-        self.random_nades = LabeledToggle(self, text="Random nades", default_state=True)
+        self.random_nades = LabeledToggle(self, text="随机投掷物", default_state=True)
         self.random_nades.setContentsMargins(0, 15, 0, 0)
         self.random_nades.stateChanged.connect(lambda: glb.SIGNAL_MANAGER.dodgeballSettingChanged.emit("random_nades", self.random_nades.isChecked()))
-        self.hotkeys = LabeledToggle(self, text="Hotkeys", default_state=True)
+        self.hotkeys = LabeledToggle(self, text="快捷键", default_state=True)
         self.hotkeys.setContentsMargins(0, 15, 0, 0)
         self.hotkeys.stateChanged.connect(lambda: glb.SIGNAL_MANAGER.dodgeballSettingChanged.emit("hotkeys", self.hotkeys.isChecked()))
-        self.damage = LabeledSlider(self, text="Damage")
+        self.damage = LabeledSlider(self, text="伤害倍率")
         self.damage.valueChanged.connect(lambda: glb.SIGNAL_MANAGER.dodgeballDamageChanged.emit(self.damage.value()))
         
         self.settings_container_layout.addWidget(self.random_nades)
