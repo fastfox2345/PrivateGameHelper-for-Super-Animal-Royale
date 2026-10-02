@@ -23,6 +23,7 @@
 		<file>images/blunderbuss_color.png</file>
 		<file>images/bow.png</file>
 		<file>images/bow_color.png</file>
+		<file>images/burst_color.png</file>
 		<file>images/crossbow_zombie_color.png</file>
 		<file>images/cat_mine.png</file>
 		<file>images/cat_mine_color.png</file>
@@ -104,6 +105,7 @@
 		<file>images/silenced_pistol.png</file>
 		<file>images/silenced_pistol_color.png</file>
 		<file>images/skunk_bomb.png</file>
+		<file>images/skunk_bomb_color.png</file>
 		<file>images/smg.png</file>
 		<file>images/smg_color.png</file>
 		<file>images/sniper.png</file>

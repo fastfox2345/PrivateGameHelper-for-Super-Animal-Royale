@@ -49,7 +49,7 @@ class MapWidget(QLabel):
                 teleport_player(x, y)
             case Qt.MouseButton.RightButton:
                 pyperclip.copy(f"{x} {y}")
-                send_notification("Coordinates copied to clipboard")
+                send_notification("坐标已复制到剪贴板")
                 if self.window().metaObject().className() == "Overlay":
                     open_window("Super Animal Royale")
             case _:

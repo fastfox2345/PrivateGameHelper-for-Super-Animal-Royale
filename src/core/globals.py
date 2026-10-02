@@ -72,7 +72,11 @@ PREGAME_SETTINGS: dict = {
             "grenadebanana": 1.0,
             "grenadeskunk": 1.0,
             "grenadecatmine": 1.0,
-            "grenadezipline": 1.0
+            "grenadezipline": 1.0,
+            "gunblunderbuss": 1.0,
+            "guncrossbowzombie": 1.0,
+            "gunuzi": 1.0,
+            "gunburst": 1.0,
         }
     }
 }

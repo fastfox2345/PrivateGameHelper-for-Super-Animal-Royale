@@ -64,7 +64,7 @@ class General(QWidget):
         self.control_buttons_layout.setAlignment(Qt.AlignmentFlag.AlignRight)
         self.control_buttons_layout.setSpacing(10)
         
-        self.restore_defaults_button = Button(self.control_buttons, "恢复")
+        self.restore_defaults_button = Button(self.control_buttons, "重置")
         self.restore_defaults_button.clicked.connect(lambda: glb.SIGNAL_MANAGER.presetRestored.emit(glb.PREGAME_DEFAULT_SETTINGS))
         self.control_buttons_layout.addWidget(self.restore_defaults_button)
         

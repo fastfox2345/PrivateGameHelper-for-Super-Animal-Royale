@@ -267,7 +267,7 @@ class Graphs(QWidget):
         self.canvas_dict["average_placement"].axes.set_xticklabels(player_names, rotation=45, fontsize=8, ha="right", rotation_mode="anchor")
         self.canvas_dict["average_placement"].axes.set_xmargin(0.01)
         self.canvas_dict["average_placement"].axes.set_title(metadata["name"], font=rubik_font_bold, fontsize=20)
-        self.canvas_dict["average_placement"].axes.set_ylabel("平均击杀", font=rubik_font_bold, fontsize=20)
+        self.canvas_dict["average_placement"].axes.set_ylabel("平均排名", font=rubik_font_bold, fontsize=20)
         self.canvas_dict["average_placement"].axes.invert_yaxis()
         self.canvas_dict["average_placement"].save_chart()
     

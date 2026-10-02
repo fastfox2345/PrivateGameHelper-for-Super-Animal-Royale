@@ -16,11 +16,11 @@ class Settings(QWidget):
         self.page_layout.setContentsMargins(9, 0, 0, 0)
         self.page_layout.setAlignment(Qt.AlignmentFlag.AlignTop)
         
-        self.settings_label = QLabel(self, text="Settings")
+        self.settings_label = QLabel(self, text="设置")
         self.settings_label.setContentsMargins(-9, 0, 0, 15)
         self.settings_label.setObjectName("PregameHeaderName")
         
-        self.name_label = QLabel(self, text="Tournament name")
+        self.name_label = QLabel(self, text="比赛名称")
         self.name_label.setObjectName("PresetNameLabel")
         self.name_label.setContentsMargins(0, 0, 0, 0)
         
@@ -31,14 +31,14 @@ class Settings(QWidget):
         self.name_edit.setText("Untitled")
         self.name_edit.textEdited.connect(self.name_edit.setText)
         
-        self.mode_combobox = TournamentComboBox(self, "Game mode", 221)
+        self.mode_combobox = TournamentComboBox(self, "游戏模式", 221)
         self.mode_combobox.addItems([
             "Solo",
             "Duo",
             "Squad"
         ])
         
-        self.datetime_label = QLabel(self, text="Date and time")
+        self.datetime_label = QLabel(self, text="日期与时间")
         self.datetime_label.setObjectName("PresetNameLabel")
         self.datetime_label.setContentsMargins(0, 10, 0, 0)
         
@@ -67,7 +67,7 @@ class Settings(QWidget):
         
         self.copy_to_clipboard = ClickableLabel(self)
         self.copy_to_clipboard.setContentsMargins(0, 0, 0, 0)
-        self.copy_to_clipboard.setToolTip("Copy Discord Timestamp")
+        self.copy_to_clipboard.setToolTip("复制Discord时间戳")
         self.clipboard_pixmap = QPixmap(IMAGES["clipboard"]).scaledToWidth(15, Qt.TransformationMode.SmoothTransformation)
         self.copy_to_clipboard.setPixmap(self.clipboard_pixmap)
         self.copy_to_clipboard.setFixedSize(self.clipboard_pixmap.width() + 9, self.clipboard_pixmap.height() + 9)
@@ -79,7 +79,7 @@ class Settings(QWidget):
         self.datetime_container_layout.addWidget(self.datetime_edit)
         self.datetime_container_layout.addWidget(self.copy_to_clipboard)
         
-        self.discord_integration_toggle = LabeledToggle(self, text="Discord Integration", default_state=True)
+        self.discord_integration_toggle = LabeledToggle(self, text="Discord集成", default_state=True)
         
         self.settings_buttons = QWidget(self)
         self.settings_buttons_layout = QHBoxLayout(self.settings_buttons)
@@ -102,7 +102,7 @@ class Settings(QWidget):
         self.file_dialog.setNameFilter("Zip archive (*.zip)")
         self.file_dialog.fileSelected.connect(self.export_csvs)
         
-        self.export_button = Button(self, "Export to CSVs", w=210)
+        self.export_button = Button(self, "导出到CSV", w=210)
         self.export_button.clicked.connect(self.file_dialog.exec)
         
         self.page_layout.addWidget(self.settings_label)
@@ -119,12 +119,12 @@ class Settings(QWidget):
         
         self.confirm_popup = Popup(
             self, 
-            "Confirm", 
-            "Are you sure you want to\ndelete this tournament?",
+            "确认", 
+            "你确定要删除这个比赛吗？",
             300,
             150,
-            Button(None, "Cancel", btn_style="ButtonDelete"),
-            Button(None, "Delete", btn_style="ButtonDefault")
+            Button(None, "取消", btn_style="ButtonDelete"),
+            Button(None, "删除", btn_style="ButtonDefault")
         )
         
         self.confirm_popup.buttons[0].clicked.connect(self.confirm_popup.hide)
@@ -140,7 +140,7 @@ class Settings(QWidget):
     
     def copy_timestamp(self) -> None:
         pyperclip.copy(f"<t:{self.datetime_edit.dateTime().toSecsSinceEpoch()}:F>")
-        send_notification("Timestamp copied to clipboard!", "NotifSuccess")
+        send_notification("时间戳已复制到剪贴板！", "NotifSuccess")
     
     def save_settings(self) -> None:
         try:
@@ -154,9 +154,9 @@ class Settings(QWidget):
             with open(os.path.join(tournament_path, "metadata.json"), "w") as f:
                 json.dump(tournament_metadata, f, indent=4)
             glb.SIGNAL_MANAGER.tournamentUpdated.emit(self.tournament_id)
-            send_notification("Settings have been saved!", "NotifSuccess")
+            send_notification("设置已保存！", "NotifSuccess")
         except Exception as e:
-            send_notification("Something went wrong. Try again", "NotifFail")
+            send_notification("保存设置时出错。请重试", "NotifFail")
             print(e)
     
     def load_settings(self, tournament_id: str) -> None:
@@ -203,7 +203,7 @@ class Settings(QWidget):
         leaderboard_path = os.path.join(tournament_path, "leaderboard.csv")
         rounds = self.get_rounds()
         if not os.path.exists(leaderboard_path) and not rounds:
-            send_notification("No files to export.", "NotifFail")
+            send_notification("没有文件可导出", "NotifFail")
             return
         with ZipFile(file, "w") as zip_file:
             if os.path.exists(leaderboard_path):

@@ -35,11 +35,11 @@ class Scoring(QWidget):
         self.page_layout.addWidget(self.vline)
         self.page_layout.addWidget(self.right_widget)
         
-        self.kills_label = QLabel(self, text="Kills")
+        self.kills_label = QLabel(self, text="击杀")
         self.kills_label.setContentsMargins(-9, 0, 0, 15)
         self.kills_label.setObjectName("PregameHeaderName")
         
-        self.placement_label = QLabel(self, text="Placement")
+        self.placement_label = QLabel(self, text="排名")
         self.placement_label.setContentsMargins(-9, 0, 0, 15)
         self.placement_label.setObjectName("PregameHeaderName")
         
@@ -48,7 +48,7 @@ class Scoring(QWidget):
         
         # LEFT WIDGET
         
-        self.static_kill_points_label = QLabel(self, text="Static kill points")
+        self.static_kill_points_label = QLabel(self, text="固定击杀得分")
         self.static_kill_points_label.setObjectName("PresetNameLabel")
         self.static_kill_points_label.setContentsMargins(0, 0, 0, 0)
         self.static_kill_points_label.setToolTip("If enabled, all kills will be worth the same amount of points regardless of placement")
@@ -57,7 +57,7 @@ class Scoring(QWidget):
         self.static_kill_points_toggle.stateChanged.connect(lambda: glb.SIGNAL_MANAGER.killPointsToggled.emit(self.static_kill_points_toggle.isChecked(), self.tournament_id))
         self.static_kill_points_toggle.setToolTip("If enabled, all kills will be worth the same amount of points regardless of placement")
         
-        self.kill_points_label = QLabel(self, text="Points per kill")
+        self.kill_points_label = QLabel(self, text="每次击杀得分")
         self.kill_points_label.setObjectName("PresetNameLabel")
         self.kill_points_label.setContentsMargins(0, 15, 0, 0)
         
@@ -69,7 +69,7 @@ class Scoring(QWidget):
         self.kill_points_spinbox.setDecimals(1)
         self.kill_points_spinbox.setMaximum(999.9)
         
-        self.kill_leader_game_label = QLabel(self, text="Points for most kills in a game")
+        self.kill_leader_game_label = QLabel(self, text="单局最高击杀得分")
         self.kill_leader_game_label.setObjectName("PresetNameLabel")
         self.kill_leader_game_label.setContentsMargins(0, 15, 0, 0)
         
@@ -81,7 +81,7 @@ class Scoring(QWidget):
         self.kill_leader_game_spinbox.setDecimals(1)
         self.kill_leader_game_spinbox.setMaximum(999.9)
         
-        self.kill_leader_tournament_label = QLabel(self, text="Points for most kills in the tournament")
+        self.kill_leader_tournament_label = QLabel(self, text="锦标赛最高击杀得分")
         self.kill_leader_tournament_label.setObjectName("PresetNameLabel")
         self.kill_leader_tournament_label.setContentsMargins(0, 15, 0, 0)
         
@@ -93,7 +93,7 @@ class Scoring(QWidget):
         self.kill_leader_tournament_spinbox.setDecimals(1)
         self.kill_leader_tournament_spinbox.setMaximum(999.9)
         
-        self.kill_cap_label = QLabel(self, text="Max number of kills that get awarded points (0 - No Limit)")
+        self.kill_cap_label = QLabel(self, text="计分击杀数上限(0 表示无限制)")
         self.kill_cap_label.setObjectName("PresetNameLabel")
         self.kill_cap_label.setContentsMargins(0, 15, 0, 0)
         
@@ -105,11 +105,11 @@ class Scoring(QWidget):
         self.kill_cap_spinbox.setMinimum(0)
         self.kill_cap_spinbox.setMaximum(999)
         
-        self.kill_leader_tiebreaker = SettingsComboBox(self, "Kill Leader Tiebreaker", w=220)
+        self.kill_leader_tiebreaker = SettingsComboBox(self, "击杀王平局判定", w=220)
         self.kill_leader_tiebreaker.addItems(["All", "Highest Placed", "Lowest Placed"])
         self.kill_leader_tiebreaker.setToolTip("Changes which players get awarded points for most kills in case of a tie")
         
-        self.tiebreaker = SettingsComboBox(self, "Tiebreaker", w=220)
+        self.tiebreaker = SettingsComboBox(self, "平局判定", w=220)
         self.tiebreaker.addItems(["Kills", "Average Kills", "Average Placement", "Wins"])
         self.tiebreaker.setToolTip("Changes the value according to which players are ordered in the leaderboard in case of a tie")
         
@@ -151,12 +151,12 @@ class Scoring(QWidget):
         self.placement_array: list[TournamentRange] = []
             
         self.new_icon = QPixmap(IMAGES["add"]).scaledToHeight(13, Qt.TransformationMode.SmoothTransformation)
-        self.new_button = Button(self, " Add Range", self.new_icon, 120, btn_style="ButtonDefault")
+        self.new_button = Button(self, " 添加范围", self.new_icon, 120, btn_style="ButtonDefault")
         self.new_button.clicked.connect(self.add_range)
         self.placement_layout.addWidget(self.new_button)
         
         self.save_icon = QPixmap(IMAGES["pencil"]).scaledToHeight(13, Qt.TransformationMode.SmoothTransformation)
-        self.save_button = Button(self, " Save", self.save_icon, w=120)
+        self.save_button = Button(self, " 保存", self.save_icon, w=120)
         self.save_button.clicked.connect(self.save_scoring)
         self.main_layout.addWidget(self.save_button, alignment=Qt.AlignmentFlag.AlignRight)
         
@@ -300,12 +300,12 @@ class PlacementLabels(QWidget):
         self.range_layout.setContentsMargins(0, 0, 0, 0)
         self.range_layout.setSpacing(20)
         
-        self.from_label = QLabel(self, text="From")
+        self.from_label = QLabel(self, text="从")
         self.from_label.setObjectName("PresetNameLabel")
         self.from_label.setContentsMargins(0, 0, 0, 0)
         self.from_label.setFixedWidth(70)
         
-        self.to_label = QLabel(self, text="To")
+        self.to_label = QLabel(self, text="到")
         self.to_label.setObjectName("PresetNameLabel")
         self.to_label.setContentsMargins(0, 0, 0, 0)
         self.to_label.setFixedWidth(70)

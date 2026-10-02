@@ -512,7 +512,7 @@ def save_players() -> None:
 
 def send_player_command(command: str) -> None:
     if not glb.SELECTED_PLAYER:
-        send_notification("No player selected", "NotifFail")
+        send_notification("没有选择玩家", "NotifFail")
         return
     window = open_window("Super Animal Royale")
     if not window:
@@ -525,7 +525,7 @@ def send_player_command(command: str) -> None:
 # Teleport
 def teleport_player(x: int, y: int) -> None:
     if not glb.SELECTED_PLAYER_TELE:
-        send_notification("No player selected", "NotifFail")
+        send_notification("没有选择玩家", "NotifFail")
         return
     window = open_window("Super Animal Royale")
     if not window:

@@ -48,27 +48,27 @@ class TournamentPage(QWidget):
         
         _btn_list = [
             {
-                "text": "Settings",
+                "text": "设置",
                 "page": self.settings_page,
                 "active": True
             },
             {
-                "text": "Scoring",
+                "text": "计分",
                 "page": self.scoring_page,
                 "active": False
             },
             {
-                "text": "Leaderboard",
+                "text": "排行榜",
                 "page": self.leaderboard_page,
                 "active": False
             },
             {
-                "text": "Rounds",
+                "text": "对局",
                 "page": self.rounds_page,
                 "active": False
             },
             {
-                "text": "Graphs",
+                "text": "图标",
                 "page": self.graphs_page,
                 "active": False
             },

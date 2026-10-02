@@ -28,8 +28,8 @@ class PageAbout(QWidget):
         self.title.setObjectName("TitleLabel")
         
         self.made_by = QLabel(
-            "Made by Suchy499\n"
-            "Banner and application icons by Super_Dasher", 
+            "本程序由Suchy499开发\n"
+            "原横幅和原应用程序图标由Super_Dasher设计", 
             self
         )
         self.made_by.setObjectName("HostIDLabel")

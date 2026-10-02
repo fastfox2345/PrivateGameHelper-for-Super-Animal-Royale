@@ -137,14 +137,16 @@ class Consumables(QWidget):
         )
         self.banana_button = ThrowableButton(self, QPixmap(IMAGES["banana_color"]), 55, "banana")
         self.grenade_button = ThrowableButton(self, QPixmap(IMAGES["grenade_color"]), 55, "nade")
+        self.skunk_bomb_button = ThrowableButton(self, QPixmap(IMAGES["skunk_bomb_color"]), 55, "skunk")
         self.zipline_button = ThrowableButton(self, QPixmap(IMAGES["zipline_color"]), 55, "zip")
         self.cat_mine_button = ThrowableButton(self, QPixmap(IMAGES["cat_mine_color"]), 55, "mine")
         
         self.throwables_container_layout.addWidget(self.throwables_amount, 0, 0, 1, 3)
         self.throwables_container_layout.addWidget(self.banana_button, 1, 0)
         self.throwables_container_layout.addWidget(self.grenade_button, 1, 1)
-        self.throwables_container_layout.addWidget(self.zipline_button, 1, 2)
-        self.throwables_container_layout.addWidget(self.cat_mine_button, 1, 3)
+        self.throwables_container_layout.addWidget(self.skunk_bomb_button, 1, 2)
+        self.throwables_container_layout.addWidget(self.zipline_button, 1, 3)
+        self.throwables_container_layout.addWidget(self.cat_mine_button, 1, 4)
         
         self.content_layout.addWidget(self.ammo_label)
         self.content_layout.addWidget(self.ammo_container)

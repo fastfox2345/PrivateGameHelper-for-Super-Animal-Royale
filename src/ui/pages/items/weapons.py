@@ -66,6 +66,8 @@ class Weapons(QWidget):
         self.crossbow_zombie_button = WeaponButton(self, QPixmap(IMAGES["crossbow_zombie_color"]), weapon_id=22)
         self.uzi_button = WeaponButton(self, QPixmap(IMAGES["uzi_color"]), weapon_id=23)
         self.dualzi_button = WeaponButton(self, QPixmap(IMAGES["dualzi_color"]), weapon_id=24)
+        self.burst_button = WeaponButton(self, QPixmap(IMAGES["burst_color"]), weapon_id=25)
+
         
         self.weapons_container_layout.addWidget(self.common_button, 0, 0)
         self.weapons_container_layout.addWidget(self.uncommon_button, 0, 1)
@@ -97,6 +99,7 @@ class Weapons(QWidget):
         self.weapons_container_layout.addWidget(self.crossbow_zombie_button, 5, 2)
         self.weapons_container_layout.addWidget(self.uzi_button, 5, 3)
         self.weapons_container_layout.addWidget(self.dualzi_button, 5, 4)
+        self.weapons_container_layout.addWidget(self.burst_button, 6, 0)
         
         self.content_layout.addWidget(self.weapons_label)
         self.content_layout.addWidget(self.weapons_container)

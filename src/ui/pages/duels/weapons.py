@@ -148,6 +148,8 @@ class Weapons(QWidget):
             WeaponSelect(self.content_area, QPixmap(IMAGES["crossbow_zombie_color"]), 22, "a"),
             WeaponSelect(self.content_area, QPixmap(IMAGES["uzi_color"]), 23, "a"),
             WeaponSelect(self.content_area, QPixmap(IMAGES["dualzi_color"]), 24, "a"),
+            WeaponSelect(self.content_area, QPixmap(IMAGES["burst_color"]), 25, "a"),
+        
         ]
         
         _buttons_b = [
@@ -176,6 +178,8 @@ class Weapons(QWidget):
             WeaponSelect(self.content_area, QPixmap(IMAGES["crossbow_zombie_color"]), 22, "b"),
             WeaponSelect(self.content_area, QPixmap(IMAGES["uzi_color"]), 23, "b"),
             WeaponSelect(self.content_area, QPixmap(IMAGES["dualzi_color"]), 24, "b"),
+            WeaponSelect(self.content_area, QPixmap(IMAGES["burst_color"]), 25, "b"),
+
         ]
         
         self.page_layout.addWidget(self.label)
